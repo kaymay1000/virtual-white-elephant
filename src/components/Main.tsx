@@ -27,7 +27,7 @@ const Main = ({
   aProp,
 }: MainProps): JSX.Element => {
   return (
-    <div className="border-dotted border-2 border-blue-500">
+    <div className="border-dotted border-2 border-blue-500 p-2">
       <p>This is the Main page!</p>
       <p>Here's a prop: {aProp}</p>
       <ParticipantDropdown players={players}></ParticipantDropdown>
