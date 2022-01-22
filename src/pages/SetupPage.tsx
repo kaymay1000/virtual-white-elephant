@@ -1,6 +1,5 @@
 import { useForm } from '../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
-
 interface SetupPageProps {
   testProp?: boolean;
 }
@@ -8,14 +7,15 @@ interface SetupPageProps {
 const SetupPage = ({
   testProp,
 }: SetupPageProps): JSX.Element => {
+  // react-router-dom v6 replaces useHistory with useNavigate
+  const navigate = useNavigate();
 
-  // initialState props must match their corresponding field's "name" attribute
+  // initialState keys must match their corresponding field's "name" attribute
   const initialState = {
     numPlayers: 0,
   }
 
-  const navigate = useNavigate();
-
+  // make use of custom useForm hook
   const { handleChange, handleSubmit, values } = useForm(setupFormCallback, initialState);
 
   async function setupFormCallback() {
@@ -32,6 +32,7 @@ const SetupPage = ({
         <input 
           required
           type="text"
+          // name must match corresponding key in initialState
           name="numPlayers"
           onChange={handleChange}
           className="border-solid border-2 border-black" 
