@@ -1,28 +1,50 @@
-import { useForm } from '../hooks/useForm';
+import React, { useState, useEffect } from 'react';
+// import { useForm } from '../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
+import PlayerForm from '../components/PlayerForm';
 interface SetupPageProps {
   testProp?: boolean;
+  // showPlayerForm: boolean;
 }
 
 const SetupPage = ({
   testProp,
 }: SetupPageProps): JSX.Element => {
+  const [showPlayerForm, setShowPlayerForm] = useState(false);
+  const [numPlayers, setNumPlayers] = useState(0);
+
   // react-router-dom v6 replaces useHistory with useNavigate
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // initialState keys must match their corresponding field's "name" attribute
-  const initialState = {
-    numPlayers: 0,
-  }
+  // const initialState = {
+  //   numPlayers: 0,
+  // }
 
   // make use of custom useForm hook
-  const { handleChange, handleSubmit, values } = useForm(setupFormCallback, initialState);
+  // const { handleChange, handleSubmit, values } = useForm(setupFormCallback, initialState);
 
-  async function setupFormCallback() {
-    console.log('values: ', values);
-    console.log('hitting callback');
-    navigate('/');
+  // async function setupFormCallback() {
+  //   console.log('values: ', values);
+  //   console.log('hitting callback');
+  //   navigate('/');
+  // }
+
+  console.log('numPlayers page load: ', numPlayers)
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {  
+    console.log('event.target.value: ', event.target.value);
+    setNumPlayers(parseInt(event.target.value));
   }
+
+  async function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setShowPlayerForm(!showPlayerForm);
+    console.log('submit event: ', event)
+  }
+
+  useEffect(() => {}, [showPlayerForm])
+  useEffect(() => {}, [numPlayers])
 
   return (
     <div className="border-solid border-2 border-red-500">
@@ -33,6 +55,7 @@ const SetupPage = ({
           required
           type="text"
           // name must match corresponding key in initialState
+          defaultValue={0}
           name="numPlayers"
           onChange={handleChange}
           className="border-solid border-2 border-black" 
@@ -40,6 +63,8 @@ const SetupPage = ({
         />
         <button type="submit">Next</button>
       </form>
+
+      {showPlayerForm ? <PlayerForm numPlayers={numPlayers}></PlayerForm> : <></>}
     </div>
   )
 }
