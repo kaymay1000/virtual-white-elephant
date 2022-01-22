@@ -1,4 +1,3 @@
-// formik
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik'
 
 interface PlayerFormValues {
@@ -24,6 +23,7 @@ const PlayerForm = () => {
         >
           {({values}) => (
             <Form>
+              {/* https://formik.org/docs/examples/field-arrays */}
               <FieldArray name="players">
                 {() => (
                   <div>
