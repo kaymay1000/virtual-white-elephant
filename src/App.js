@@ -4,7 +4,6 @@ import {
 } from 'react-router-dom';
 import Main from './components/Main.tsx';
 import Test from './components/Test.tsx';
-// import './App.css';
 
 const App = () => {
   let routes = useRoutes([
