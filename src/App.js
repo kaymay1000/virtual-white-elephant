@@ -7,7 +7,7 @@ import SetupPage from './pages/SetupPage.tsx';
 
 const App = () => {
   let routes = useRoutes([
-    {path: "/", element: <Main aProp={'foo'}/>},
+    {path: "/", element: <Main aProp={'foo'} />},
     {path: "/setup", element: <SetupPage/>}
   ]);
   return routes;
@@ -16,7 +16,7 @@ const App = () => {
 const AppWrapper = () => {
   return (
     <Router>
-      <App />
+      <App className="h-screen"/>
     </Router>
   )
 }
