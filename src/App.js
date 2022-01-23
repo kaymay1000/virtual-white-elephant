@@ -2,6 +2,7 @@ import {
   BrowserRouter as Router,
   useRoutes,
 } from 'react-router-dom';
+import Header from './components/Header';
 import Main from './components/Main.tsx';
 import SetupPage from './pages/SetupPage.tsx';
 // import SetupPageTemp from './pages/SetupPageTemp';
@@ -18,7 +19,9 @@ const App = () => {
 const AppWrapper = () => {
   return (
     <Router>
-      <App className="h-screen"/>
+      <App className="h-screen">
+        <Header />
+      </App>
     </Router>
   )
 }

@@ -21,7 +21,7 @@ const initialValues: PlayerFormValues = {
 // }
 
   return (
-    <div className="max-w-full mt-10 mx-48 p-4 overflow-auto border-solid border-2 border-gray player-names-container">
+    <div className="max-w-full mt-10 mx-48 p-8 overflow-auto border-solid border-2 border-gray player-names-container">
       <h1 className="text-2xl">Player Names</h1>
       <Formik
         initialValues={initialValues}
