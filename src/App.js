@@ -3,14 +3,14 @@ import {
   useRoutes,
 } from 'react-router-dom';
 import Main from './components/Main.tsx';
-// import SetupPage from './pages/SetupPage.tsx';
-import SetupPageTwo from './pages/SetupPageTwo.tsx';
+import SetupPage from './pages/SetupPage.tsx';
+// import SetupPageTemp from './pages/SetupPageTemp';
 
 const App = () => {
   let routes = useRoutes([
     {path: "/", element: <Main aProp={'foo'} />},
-    // {path: "/setup", element: <SetupPage/>}
-    {path: "/setup", element: <SetupPageTwo/>}
+    {path: "/setup", element: <SetupPage/>}
+    // {path: "/setup", element: <SetupPageTemp/>}
   ]);
   return routes;
 }

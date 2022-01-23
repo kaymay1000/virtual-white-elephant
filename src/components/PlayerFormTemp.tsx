@@ -2,19 +2,19 @@ import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import Icon from './Icon';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-type PlayerFormFormikProps = {
+type PlayerFormTempProps = {
   numPlayers: number;
 }
 
-type PlayerFormFormikValues = {
+type PlayerFormTempValues = {
   players: Array<{ name: string }>
 }
 
-const PlayerFormFormik = ({
+const PlayerFormTemp = ({
   numPlayers,
-}: PlayerFormFormikProps) => {
+}: PlayerFormTempProps) => {
 
-const initialValues: PlayerFormFormikValues = {
+const initialValues: PlayerFormTempValues = {
   // works
   players: [{name: ''}]
   // doesn't work (Warning: A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components)
@@ -71,4 +71,4 @@ const initialValues: PlayerFormFormikValues = {
   )
 };
 
-export default PlayerFormFormik;
+export default PlayerFormTemp;
