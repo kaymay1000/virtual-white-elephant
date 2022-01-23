@@ -1,5 +1,4 @@
-import PlayerDropdown from './PlayerDropdown'
-import PlayerForm from './PlayerForm'
+import PlayerDropdown from './PlayerDropdown';
 
 interface MainProps {
   aProp?: boolean;
@@ -31,7 +30,6 @@ const Main = ({
     <div className="border-dotted border-2 border-blue-500 p-2">
       <p>This is the Main page!</p>
       <p>Here's a prop: {aProp}</p>
-      <PlayerForm></PlayerForm>
       <PlayerDropdown players={players}></PlayerDropdown>
     </div>
   )

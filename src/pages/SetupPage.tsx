@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import { useForm } from '../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
+import PlayerFormFormik from '../components/PlayerFormFormik';
 import PlayerForm from '../components/PlayerForm';
 interface SetupPageProps {
   testProp?: boolean;
@@ -11,6 +12,7 @@ const SetupPage = ({
   testProp,
 }: SetupPageProps): JSX.Element => {
   const [showPlayerForm, setShowPlayerForm] = useState(false);
+  const [showNumPlayers, setShowNumPlayers] = useState(true);
   const [numPlayers, setNumPlayers] = useState(0);
 
   // react-router-dom v6 replaces useHistory with useNavigate
@@ -40,31 +42,40 @@ const SetupPage = ({
   async function handleSubmit(event: React.ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     setShowPlayerForm(!showPlayerForm);
+    setShowNumPlayers(!showNumPlayers);
     console.log('submit event: ', event)
   }
 
-  useEffect(() => {}, [showPlayerForm])
-  useEffect(() => {}, [numPlayers])
+  // useEffect(() => {}, [showPlayerForm])
+  // useEffect(() => {}, [numPlayers])
 
   return (
     <div className="border-solid border-2 border-red-500">
-      <h1>Let's get things set up.</h1>
-      <p>How many players are participating in the exchange?</p>
-      <form onSubmit={handleSubmit}>
-        <input 
-          required
-          type="text"
-          // name must match corresponding key in initialState
-          defaultValue={0}
-          name="numPlayers"
-          onChange={handleChange}
-          className="border-solid border-2 border-black" 
-          id="num-players-setup"
-        />
-        <button type="submit">Next</button>
-      </form>
+      {
+        showNumPlayers ? (
+          <div>
+            <h1>Let's get things set up.</h1>
+            <p>How many players are participating in the exchange?</p>
+            <form onSubmit={handleSubmit}>
+              <input 
+                required
+                type="text"
+                // name must match corresponding key in initialState
+                // value={numPlayers}
+                name="numPlayers"
+                onChange={handleChange}
+                className="border-solid border-2 border-black" 
+                id="num-players-setup"
+              />
+              <button type="submit">Next</button>
+            </form>
+          </div>
+        ) : 
+        <></>
+      }
 
-      {showPlayerForm ? <PlayerForm numPlayers={numPlayers}></PlayerForm> : <></>}
+      {showPlayerForm ? <PlayerFormFormik numPlayers={numPlayers}></PlayerFormFormik> : <></>}
+      {/* {showPlayerForm ? <PlayerForm numPlayers={numPlayers}></PlayerForm> : <></>} */}
     </div>
   )
 }
