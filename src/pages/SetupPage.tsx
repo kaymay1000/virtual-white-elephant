@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import { useForm } from '../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
 import PlayerFormFormik from '../components/PlayerFormFormik';
+import PlayerFormFormikTwo from '../components/PlayerFormFormikTwo';
 import PlayerForm from '../components/PlayerForm';
 import PlayerFormReactHook from '../components/PlayerFormReactHook';
 interface SetupPageProps {
@@ -75,7 +76,8 @@ const SetupPage = ({
         <></>
       }
 
-      {showPlayerForm ? <PlayerFormFormik numPlayers={numPlayers}></PlayerFormFormik> : <></>}
+      {/* {showPlayerForm ? <PlayerFormFormik numPlayers={numPlayers}></PlayerFormFormik> : <></>} */}
+      {showPlayerForm ? <PlayerFormFormikTwo></PlayerFormFormikTwo> : <></>}
       {/* {showPlayerForm ? <PlayerForm numPlayers={numPlayers}></PlayerForm> : <></>} */}
       {/* {showPlayerForm ? <PlayerFormReactHook numPlayers={numPlayers}></PlayerFormReactHook> : <></>} */}
     </div>

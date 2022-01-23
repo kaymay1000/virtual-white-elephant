@@ -10,15 +10,18 @@ type PlayerFormFormikValues = {
   players: Array<{ name: string }>
 }
 
-const initialValues: PlayerFormFormikValues = {
-  players: [
-    {name: ''}
-  ]
-}
-
 const PlayerFormFormik = ({
   numPlayers,
 }: PlayerFormFormikProps) => {
+
+const initialValues: PlayerFormFormikValues = {
+  // works
+  players: [{name: ''}]
+  // doesn't work (Warning: A component is changing an uncontrolled input to be controlled. This is likely caused by the value changing from undefined to a defined value, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component. More info: https://reactjs.org/link/controlled-components)
+  // players: [...Array(numPlayers)]
+  // doesn't work (ditto)
+  // players: [...Array<{name: ''}>(numPlayers)]
+}
 
   console.log('initialValues: ', initialValues)
 
@@ -51,7 +54,10 @@ const PlayerFormFormik = ({
                         </div>
                       ))
                     )}
-                    <button type="button" onClick={() => arrayHelpers.push({name: ''})}>
+                    <button 
+                      type="button" 
+                      onClick={() => {arrayHelpers.push({name: ''});}}
+                    >
                       Add a player
                     </button>
                   </div>
