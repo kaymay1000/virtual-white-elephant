@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PlayerFormFormik from '../components/PlayerFormFormik';
 import PlayerForm from '../components/PlayerForm';
+import PlayerFormReactHook from '../components/PlayerFormReactHook';
 interface SetupPageProps {
   testProp?: boolean;
   // showPlayerForm: boolean;
@@ -50,7 +51,7 @@ const SetupPage = ({
   // useEffect(() => {}, [numPlayers])
 
   return (
-    <div className="border-solid border-2 border-red-500">
+    <div className="border-solid border-2 border-red-500 h-screen">
       {
         showNumPlayers ? (
           <div>
@@ -76,6 +77,7 @@ const SetupPage = ({
 
       {showPlayerForm ? <PlayerFormFormik numPlayers={numPlayers}></PlayerFormFormik> : <></>}
       {/* {showPlayerForm ? <PlayerForm numPlayers={numPlayers}></PlayerForm> : <></>} */}
+      {/* {showPlayerForm ? <PlayerFormReactHook numPlayers={numPlayers}></PlayerFormReactHook> : <></>} */}
     </div>
   )
 }
