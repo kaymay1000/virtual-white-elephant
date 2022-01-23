@@ -22,7 +22,7 @@ const initialValues: PlayerFormFormikValues = {
 
   return (
     <div className="max-w-full mt-10 mx-48 p-4 overflow-auto border-solid border-2 border-gray player-names-container">
-      <h1 className="font-bold text-2xl">Player Names</h1>
+      <h1 className="text-2xl">Player Names</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => console.log('values: ', values)}
@@ -70,7 +70,7 @@ const initialValues: PlayerFormFormikValues = {
                   </div>
                 )}
               </FieldArray>
-              <div className="flex flex-col mb-4">
+              <div className="flex flex-col">
                 <div className="flex justify-end mt-2">
                   <p>Total Players: {`${values.players.length}`}</p>
                 </div>
