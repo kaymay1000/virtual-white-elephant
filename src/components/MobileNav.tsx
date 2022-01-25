@@ -3,6 +3,7 @@ import Icon from './Icon';
 import { NavProps } from './Nav';
 import { Dialog, Transition } from '@headlessui/react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 type MobileNavProps = {
   showMobileNav: boolean;
@@ -15,6 +16,9 @@ const MobileNav = ({
   setShowMobileNav,
   // navItems
 }: MobileNavProps): JSX.Element => {
+
+  const navigate = useNavigate();
+
   return (
     <Transition show={showMobileNav} as={Fragment}>
       <Dialog
@@ -43,9 +47,8 @@ const MobileNav = ({
             </div>
             
             <div className="flex flex-col pt-2">
-              <button className="flex justify-start text-xl hover:text-white py-2">Item 1</button>
-              <button className="flex justify-start text-xl hover:text-white py-2">Item 2</button>
-              <button className="flex justify-start text-xl hover:text-white py-2">Item 3</button>
+              <button className="flex justify-start text-xl hover:text-white py-2" onClick={() => navigate('/how-to-play')}>How to Play</button>
+              <button className="flex justify-start text-xl hover:text-white py-2" onClick={() => navigate('/about-the-developer')}>About the Developer</button>
             </div>
           </div>
           

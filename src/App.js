@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import SetupPage from './pages/SetupPage';
 import PlayerOrderPage from './pages/PlayerOrderPage';
 import ExchangePage from './pages/ExchangePage';
+import HowToPlayPage from './pages/HowToPlayPage';
 import AboutDevPage from './pages/AboutDevPage';
 // import SetupPageTemp from './pages/SetupPageTemp';
 
@@ -20,6 +21,7 @@ const App = () => {
     // {path: "/setup", element: <SetupPageTemp/>}
     {path: "/player-order", element: <PlayerOrderPage/>},
     {path: "/exchange", element: <ExchangePage/>},
+    {path: "/how-to-play", element: <HowToPlayPage/>},
     {path: "/about-the-developer", element: <AboutDevPage/>}
 
   ]);
