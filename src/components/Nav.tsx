@@ -2,6 +2,7 @@ import Icon from './Icon';
 import MobileNav from './MobileNav';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useMedia } from 'use-media';
 
 export type NavProps = {
   navItems?: JSX.Element;
@@ -12,6 +13,7 @@ const Nav = ({
 }: NavProps): JSX.Element => {
 
   const [showMobileNav, setShowMobileNav] = useState(false);
+  const isMobile = useMedia({maxWidth: '640px'});
 
   return (
     <div>
@@ -29,7 +31,11 @@ const Nav = ({
               <button className="flex items-center p-4" onClick={() => setShowMobileNav(true)}>
                 <Icon iconName={faBars}></Icon>
               </button>
-              <p className="text-2xl p-4 flex font-bold">Virtual White Elephant</p>
+              {isMobile ? 
+                <p className="text-2xl p-4 flex font-bold">VWE</p>
+               : 
+                <p className="text-2xl p-4 flex font-bold">Virtual White Elephant</p>
+              }
             </div>
           </div>
         </nav>

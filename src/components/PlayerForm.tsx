@@ -1,3 +1,4 @@
+import { useMedia } from 'use-media';
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import Icon from './Icon';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
@@ -21,7 +22,7 @@ const initialValues: PlayerFormValues = {
 // }
 
   return (
-    <div className="max-w-full my-12 mx-48 p-8 overflow-auto border-solid border-2 border-gray player-names-container">
+    <div className="max-w-full mt-4 p-6 md:mx-28 lg:mx-60 overflow-auto border-solid border-2 border-gray player-names-container">
       <h1 className="text-2xl">Player Names</h1>
       <Formik
         initialValues={initialValues}
@@ -39,7 +40,7 @@ const initialValues: PlayerFormValues = {
                         <div key={index} className="flex justify-center">
                           <label 
                             htmlFor={`players.${index}.name`}
-                            className="px-2 flex items-center"
+                            className="text-sm px-2 flex items-center"
                           >
                               {/* {`${index + 1}`} */}
                               Name
@@ -52,7 +53,7 @@ const initialValues: PlayerFormValues = {
                           <button
                             type="button"
                             onClick={() => arrayHelpers.remove(index)}
-                            className="px-2"
+                            className="px-2 text-sm"
                           >
                             <Icon iconName={faTrash}></Icon>
                           </button>
