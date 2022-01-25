@@ -1,6 +1,7 @@
-import { ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import Nav from '../Nav';
 import Footer from '../Footer';
+import HowToPlayModal from '../HowToPlayModal';
 
 type LayoutProps = {
   children: ReactNode;
@@ -9,11 +10,15 @@ type LayoutProps = {
 const Layout = ({
   children
 }: LayoutProps): JSX.Element => {
+
+  const [showHowToPlay, setShowHowToPlay] = useState(false);
+
   return (
     <>
-      <Nav/>
+      <Nav showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/>
       <main>
         {children}
+        {showHowToPlay ? <HowToPlayModal showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/> : <></>}
       </main>
       <Footer/>
     </>

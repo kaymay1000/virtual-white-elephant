@@ -1,6 +1,5 @@
 import Icon from './Icon';
 import MobileNav from './MobileNav';
-import HowToPlayModal from './HowToPlayModal';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useMedia } from 'use-media';
@@ -8,10 +7,14 @@ import { useNavigate } from 'react-router-dom';
 
 export type NavProps = {
   navItems?: JSX.Element;
+  showHowToPlay: boolean;
+  setShowHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Nav = ({
-  navItems
+  navItems,
+  showHowToPlay,
+  setShowHowToPlay
 }: NavProps): JSX.Element => {
 
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -45,12 +48,7 @@ const Nav = ({
                 </button>
                 ): (
                   <div className="flex items-center">
-                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {
-                      navigate('/how-to-play');
-                      // setShowHowToPlay(true);
-                    }}>
-                      How to Play
-                    </button>
+                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {setShowHowToPlay(true);}}>How to Play</button>
                     <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/about-the-developer')}>About the Developer</button>
                   </div>
                 )
