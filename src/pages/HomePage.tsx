@@ -14,7 +14,7 @@ const HomePage = ({
 
   return (
     <div className="text-center">
-      <Nav/>
+      {/* <Nav/> */}
       <div>This is the home page!</div>
       <button 
         className="border-solid border-2 border-black px-2 rounded hover:bg-green-100" 
@@ -22,7 +22,7 @@ const HomePage = ({
       >
         Get Started
       </button>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

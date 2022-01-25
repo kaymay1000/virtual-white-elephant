@@ -14,7 +14,7 @@ const ResultsPage = ({
 
   return (
     <div className="text-center">
-      <Nav/>
+      {/* <Nav/> */}
       <div>This is the results page!</div>
       <button 
         onClick={() => navigate('/')}
@@ -22,7 +22,7 @@ const ResultsPage = ({
       >
         Share
       </button>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

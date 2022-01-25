@@ -14,7 +14,7 @@ const ExchangePage = ({
 
   return (
     <div className="text-center">
-      <Nav/>
+      {/* <Nav/>  */}
       <div >This is the exchange page!</div>
        <button 
         className="border-solid border-2 border-black px-2 rounded hover:bg-green-100" 
@@ -22,7 +22,7 @@ const ExchangePage = ({
       >
         Complete Exchange
       </button>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
     
   )

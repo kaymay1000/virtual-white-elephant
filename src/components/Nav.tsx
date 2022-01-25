@@ -1,5 +1,6 @@
 import Icon from './Icon';
 import MobileNav from './MobileNav';
+import HowToPlayModal from './HowToPlayModal';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useMedia } from 'use-media';
@@ -14,7 +15,8 @@ const Nav = ({
 }: NavProps): JSX.Element => {
 
   const [showMobileNav, setShowMobileNav] = useState(false);
-  
+  // const [showHowToPlay, setShowHowToPlay] = useState(false);
+
   const isMobile = useMedia({maxWidth: '640px'});
   const navigate = useNavigate();
 
@@ -43,7 +45,12 @@ const Nav = ({
                 </button>
                 ): (
                   <div className="flex items-center">
-                    <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/how-to-play')}>How to Play</button>
+                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {
+                      navigate('/how-to-play');
+                      // setShowHowToPlay(true);
+                    }}>
+                      How to Play
+                    </button>
                     <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/about-the-developer')}>About the Developer</button>
                   </div>
                 )
@@ -52,6 +59,9 @@ const Nav = ({
           </div>
         </nav>
       </header>
+
+      {/* { showHowToPlay ? <HowToPlayModal showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/> : <></> } */}
+      
     </div>
    
   )

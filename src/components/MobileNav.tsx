@@ -42,7 +42,7 @@ const MobileNav = ({
                 className="hover:cursor-pointer items-start"
                 onClick={() => setShowMobileNav(false)}
               >
-                <Icon iconName={faTimes}></Icon>
+                <Icon iconName={faTimes}/>
               </button>
             </div>
             

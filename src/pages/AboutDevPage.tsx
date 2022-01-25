@@ -10,9 +10,9 @@ const AboutDevPage = ({
 }: AboutDevPageProps): JSX.Element => {
   return (
     <div className="text-center">
-      <Nav/>
+      {/* <Nav/> */}
       <div>This is the about the developer page!</div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }

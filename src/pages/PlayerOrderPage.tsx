@@ -14,7 +14,7 @@ const PlayerOrderPage = ({
 
   return (
     <div className="text-center">
-      <Nav/>
+      {/* <Nav/> */}
       <div>This is the player order page!</div>
       <button 
         onClick={() => navigate('/exchange')}
@@ -22,7 +22,7 @@ const PlayerOrderPage = ({
       >
         Start Exchange
       </button>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   )
 }
