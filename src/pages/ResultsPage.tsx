@@ -2,29 +2,29 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 
-type PlayerOrderPageProps = {
+type ResultsPageProps = {
   aProp?: boolean;
 }
 
-const PlayerOrderPage = ({
+const ResultsPage = ({
   aProp
-}: PlayerOrderPageProps): JSX.Element => {
+}: ResultsPageProps): JSX.Element => {
 
   const navigate = useNavigate();
 
   return (
     <div className="text-center">
       <Nav/>
-      <div>This is the player order page!</div>
+      <div>This is the results page!</div>
       <button 
-        onClick={() => navigate('/exchange')}
+        onClick={() => navigate('/')}
         className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
       >
-        Start Exchange
+        Share
       </button>
       <Footer/>
     </div>
   )
 }
 
-export default PlayerOrderPage;
+export default ResultsPage;
