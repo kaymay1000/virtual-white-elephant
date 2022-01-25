@@ -9,7 +9,7 @@ const AboutDevPage = ({
   aProp
 }: AboutDevPageProps): JSX.Element => {
   return (
-    <div>
+    <div className="text-center">
       <Nav/>
       <div>This is the about the developer page!</div>
       <Footer/>

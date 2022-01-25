@@ -66,7 +66,7 @@ const PlayerForm = () => {
                     <button 
                       type="button" 
                       onClick={() => {arrayHelpers.push({name: ''});}}
-                      className="border-solid border-2 border-black px-2 rounded hover:font-bold hover:bg-green-100"
+                      className="border-solid border-2 border-black px-2 rounded hover:bg-green-100"
                     >
                       Add Player
                     </button>
@@ -80,7 +80,7 @@ const PlayerForm = () => {
                 <div className="flex justify-end mt-2">
                   <button 
                   type="submit" 
-                  className="border-solid border-2 border-black px-2 rounded justify-end hover:font-bold hover:bg-green-100" 
+                  className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-100" 
                   onClick={() => navigate('/player-order')}>Next</button>          
                 </div>
                 

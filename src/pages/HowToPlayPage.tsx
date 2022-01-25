@@ -11,7 +11,7 @@ const HowToPlayPage = ({
   return (
     <div>
       <Nav/>
-      <div>This is the how to play page!</div>
+      <div className="text-center">This is the how to play page!</div>
       <Footer/>
     </div>
   )

@@ -3,6 +3,7 @@ import MobileNav from './MobileNav';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useMedia } from 'use-media';
+import { useNavigate } from 'react-router-dom';
 
 export type NavProps = {
   navItems?: JSX.Element;
@@ -13,7 +14,9 @@ const Nav = ({
 }: NavProps): JSX.Element => {
 
   const [showMobileNav, setShowMobileNav] = useState(false);
+  
   const isMobile = useMedia({maxWidth: '640px'});
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -26,15 +29,24 @@ const Nav = ({
       {/* large screen nav */}
       <header>
         <nav>
-          <div className="w-full h-16 bg-green-100 text-center">
+          <div className="w-full h-16 p-4 bg-green-100 text-center">
             <div className="flex justify-between">
-              <button className="flex items-center p-4" onClick={() => setShowMobileNav(true)}>
-                <Icon iconName={faBars}></Icon>
-              </button>
               {isMobile ? 
-                <p className="text-2xl p-4 flex font-bold">VWE</p>
+                <button className="text-2xl flex" onClick={() => navigate('/')}>VWE</button>
                : 
-                <p className="text-2xl p-4 flex font-bold">Virtual White Elephant</p>
+                <button className="text-2xl flex" onClick={() => navigate('/')}>Virtual White Elephant</button>
+              }
+
+              {isMobile ? (
+                <button className="flex items-center" onClick={() => setShowMobileNav(true)}>
+                  <Icon iconName={faBars}></Icon>
+                </button>
+                ): (
+                  <div className="flex items-center">
+                    <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/how-to-play')}>How to Play</button>
+                    <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/about-the-developer')}>About the Developer</button>
+                  </div>
+                )
               }
             </div>
           </div>

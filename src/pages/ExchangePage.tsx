@@ -11,7 +11,7 @@ const ExchangePage = ({
   return (
     <div>
       <Nav/>
-      <div>This is the exchange page!</div>
+      <div className="text-center">This is the exchange page!</div>
       <Footer/>
     </div>
     

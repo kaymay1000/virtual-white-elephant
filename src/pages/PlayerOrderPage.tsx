@@ -9,7 +9,7 @@ const PlayerOrderPage = ({
   aProp
 }: PlayerOrderPageProps): JSX.Element => {
   return (
-    <div>
+    <div className="text-center">
       <Nav/>
       <div>This is the player order page!</div>
       <Footer/>
