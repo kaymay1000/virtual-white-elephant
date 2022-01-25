@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 const SetupPage = () => {
   return (
     <div>
-      <Nav></Nav>
+      <Nav/>
       <div className="text-center max-h-screen py-8 px-6 overflow-auto">
         <div>
           <h1 className="text-2xl font-bold">Let's get things set up.</h1>
@@ -15,7 +15,7 @@ const SetupPage = () => {
         <PlayerForm></PlayerForm>
         {/* <PlayerFormTemp></PlayerFormTemp> */}
       </div>
-      <Footer></Footer>
+      <Footer/>
     </div>
   )
 }

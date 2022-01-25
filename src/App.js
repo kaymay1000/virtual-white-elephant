@@ -4,15 +4,21 @@ import {
 } from 'react-router-dom';
 // import Nav from './components/Nav';
 // import Footer from './components/Footer';
-import Main from './components/Main.tsx';
-import SetupPage from './pages/SetupPage.tsx';
+import Main from './components/Main';
+import HomePage from './pages/HomePage';
+import SetupPage from './pages/SetupPage';
+import PlayerOrderPage from './pages/PlayerOrderPage';
+import ExchangePage from './pages/ExchangePage';
 // import SetupPageTemp from './pages/SetupPageTemp';
 
 const App = () => {
   let routes = useRoutes([
-    {path: "/", element: <Main aProp={'foo'} />},
-    {path: "/setup", element: <SetupPage/>}
+    {path: "/", element: <HomePage/>},
+    {path: "/main", element: <Main aProp={'foo'} />},
+    {path: "/setup", element: <SetupPage/>},
     // {path: "/setup", element: <SetupPageTemp/>}
+    {path: "/player-order", element: <PlayerOrderPage/>},
+    {path: "/exchange", element: <ExchangePage/>}
   ]);
   return routes;
 }
@@ -20,11 +26,7 @@ const App = () => {
 const AppWrapper = () => {
   return (
     <Router>
-      <App className="h-screen">
-        {/* <Nav></Nav> */}
-        {/* {children} */}
-        {/* <Footer></Footer> */}
-      </App>
+      <App className="h-screen"/>
     </Router>
   )
 }
