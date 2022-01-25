@@ -26,7 +26,7 @@ const Nav = ({
       {/* large screen nav */}
       <header>
         <nav>
-          <div className="w-full h-16 bg-gray-200 text-center">
+          <div className="w-full h-16 bg-green-100 text-center">
             <div className="flex justify-between">
               <button className="flex items-center p-4" onClick={() => setShowMobileNav(true)}>
                 <Icon iconName={faBars}></Icon>

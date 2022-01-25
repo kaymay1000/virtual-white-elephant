@@ -1,4 +1,3 @@
-import { useMedia } from 'use-media';
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import Icon from './Icon';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
@@ -64,7 +63,7 @@ const initialValues: PlayerFormValues = {
                     <button 
                       type="button" 
                       onClick={() => {arrayHelpers.push({name: ''});}}
-                      className="border-solid border-2 border-black px-2 rounded hover:font-bold"
+                      className="border-solid border-2 border-black px-2 rounded hover:font-bold hover:bg-green-100"
                     >
                       Add Player
                     </button>
@@ -76,7 +75,7 @@ const initialValues: PlayerFormValues = {
                   <p>Total Players: {`${values.players.length}`}</p>
                 </div>
                 <div className="flex justify-end mt-2">
-                  <button type="submit" className="border-solid border-2 border-black px-2 rounded justify-end hover:font-bold">Next</button>          
+                  <button type="submit" className="border-solid border-2 border-black px-2 rounded justify-end hover:font-bold hover:bg-green-100">Next</button>          
                 </div>
                 
               </div>

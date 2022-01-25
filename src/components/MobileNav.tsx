@@ -19,7 +19,7 @@ const MobileNav = ({
     <Transition show={showMobileNav} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 flex z-10 bg-blue-500 w-2/5"
+        className="fixed inset-0 flex z-10 bg-green-400 w-2/5"
         onClose={setShowMobileNav}
       >
         <Dialog.Overlay className="fixed inset-0 opacity-30 bg-black z-0"></Dialog.Overlay>
