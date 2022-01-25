@@ -1,6 +1,7 @@
 import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
 import Icon from './Icon';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from 'react-router-dom';
 
 interface PlayerFormValues {
   players: Array<{ name: string }>
@@ -8,17 +9,19 @@ interface PlayerFormValues {
 
 const PlayerForm = () => {
 
-const initialValues: PlayerFormValues = {
-  players: [{name: ''}]
-}
+  const navigate = useNavigate();
 
-// const validate = value => {
-//   let error;
-//   if (!value) {
-//     error = 'Player name required.'
-//   }
-//   return error;
-// }
+  const initialValues: PlayerFormValues = {
+    players: [{name: ''}]
+  }
+
+  // const validate = value => {
+  //   let error;
+  //   if (!value) {
+  //     error = 'Player name required.'
+  //   }
+  //   return error;
+  // }
 
   return (
     <div className="max-w-full mt-4 p-6 md:mx-28 lg:mx-60 overflow-auto border-solid border-2 border-gray player-names-container">
@@ -75,7 +78,10 @@ const initialValues: PlayerFormValues = {
                   <p>Total Players: {`${values.players.length}`}</p>
                 </div>
                 <div className="flex justify-end mt-2">
-                  <button type="submit" className="border-solid border-2 border-black px-2 rounded justify-end hover:font-bold hover:bg-green-100">Next</button>          
+                  <button 
+                  type="submit" 
+                  className="border-solid border-2 border-black px-2 rounded justify-end hover:font-bold hover:bg-green-100" 
+                  onClick={() => navigate('/player-order')}>Next</button>          
                 </div>
                 
               </div>

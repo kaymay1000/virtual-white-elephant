@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 // import PlayerFormTemp from '../components/PlayerFormTemp';
 
 const SetupPage = () => {
+
   return (
     <div>
       <Nav/>

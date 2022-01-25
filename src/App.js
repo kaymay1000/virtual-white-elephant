@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import SetupPage from './pages/SetupPage';
 import PlayerOrderPage from './pages/PlayerOrderPage';
 import ExchangePage from './pages/ExchangePage';
+import AboutDevPage from './pages/AboutDevPage';
 // import SetupPageTemp from './pages/SetupPageTemp';
 
 const App = () => {
@@ -18,7 +19,9 @@ const App = () => {
     {path: "/setup", element: <SetupPage/>},
     // {path: "/setup", element: <SetupPageTemp/>}
     {path: "/player-order", element: <PlayerOrderPage/>},
-    {path: "/exchange", element: <ExchangePage/>}
+    {path: "/exchange", element: <ExchangePage/>},
+    {path: "/about-the-developer", element: <AboutDevPage/>}
+
   ]);
   return routes;
 }
