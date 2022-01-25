@@ -1,5 +1,3 @@
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 
 type ResultsPageProps = {
@@ -14,7 +12,6 @@ const ResultsPage = ({
 
   return (
     <div className="text-center">
-      {/* <Nav/> */}
       <div>This is the results page!</div>
       <button 
         onClick={() => navigate('/')}
@@ -22,7 +19,6 @@ const ResultsPage = ({
       >
         Share
       </button>
-      {/* <Footer/> */}
     </div>
   )
 }

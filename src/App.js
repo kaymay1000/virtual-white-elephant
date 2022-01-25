@@ -37,7 +37,6 @@ const AppWrapper = () => {
       <Layout>
          <App className="min-h-screen"/>
       </Layout>
-     
     </Router>
   )
 }

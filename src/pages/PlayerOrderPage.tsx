@@ -1,5 +1,3 @@
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 
 type PlayerOrderPageProps = {
@@ -14,7 +12,6 @@ const PlayerOrderPage = ({
 
   return (
     <div className="text-center">
-      {/* <Nav/> */}
       <div>This is the player order page!</div>
       <button 
         onClick={() => navigate('/exchange')}
@@ -22,7 +19,6 @@ const PlayerOrderPage = ({
       >
         Start Exchange
       </button>
-      {/* <Footer/> */}
     </div>
   )
 }

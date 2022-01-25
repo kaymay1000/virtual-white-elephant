@@ -51,7 +51,6 @@ const MobileNav = ({
               <button className="flex justify-start text-sm hover:text-white py-2" onClick={() => navigate('/about-the-developer')}>About the Developer</button>
             </div>
           </div>
-          
         </Transition.Child>
       </Dialog>
     </Transition>

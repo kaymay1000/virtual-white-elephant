@@ -1,5 +1,3 @@
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 
 type ExchangePageProps = {
@@ -14,7 +12,6 @@ const ExchangePage = ({
 
   return (
     <div className="text-center">
-      {/* <Nav/>  */}
       <div >This is the exchange page!</div>
        <button 
         className="border-solid border-2 border-black px-2 rounded hover:bg-green-100" 
@@ -22,7 +19,6 @@ const ExchangePage = ({
       >
         Complete Exchange
       </button>
-      {/* <Footer/> */}
     </div>
     
   )

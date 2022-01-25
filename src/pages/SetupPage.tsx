@@ -1,7 +1,4 @@
 import PlayerForm from '../components/PlayerForm';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
-// import PlayerFormTemp from '../components/PlayerFormTemp';
 
 const SetupPage = () => {
 
@@ -14,9 +11,7 @@ const SetupPage = () => {
           <p>Enter each player's name, then click Next.</p>
         </div>
         <PlayerForm></PlayerForm>
-        {/* <PlayerFormTemp></PlayerFormTemp> */}
       </div>
-      {/* <Footer/> */}
     </div>
   )
 }
