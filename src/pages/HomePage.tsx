@@ -11,8 +11,8 @@ const HomePage = ({
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-4/5 lg:w-3/5 mx-auto">
-      <h1 className="text-2xl">Virtual White Elephant</h1>
+    <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
+      <h1 className="text-2xl font-bold">Virtual White Elephant</h1>
       <div className="py-4">
         <p>
           Don't get stuck with those ugly socks (nobody wants your re-gift, Karen!), or that mystery-flavored jam 
@@ -22,7 +22,7 @@ const HomePage = ({
       </div>
       
       <button 
-        className="border-solid border-2 border-black px-2 rounded hover:bg-green-100" 
+        className="border-solid border-2 border-black px-2 rounded hover:bg-green-400" 
         onClick={() => navigate('/setup')}
       >
         Start a Gift Exchange

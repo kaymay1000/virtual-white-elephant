@@ -30,7 +30,7 @@ const PlayerOrderPage = ({
         <div className="flex justify-center md:justify-end mt-6">
           <button 
             onClick={() => navigate('/exchange')}
-            className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
+            className='border-solid border-2 border-black px-2 rounded hover:bg-green-400'
           >
             Start Exchange
           </button>

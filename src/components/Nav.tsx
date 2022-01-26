@@ -48,9 +48,9 @@ const Nav = ({
                 </button>
                 ): (
                   <div className="flex items-center">
-                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {setshowWhiteElephantBasics(true);}}>White Elephant Basics</button>
-                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {setShowHowToUseVWE(true);}}>VWE How-To</button>
-                    <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/about-the-developer')}>About</button>
+                    <button className="flex text-sm ml-4 underline hover:text-green-400" onClick={() => {setshowWhiteElephantBasics(true);}}>White Elephant Basics</button>
+                    <button className="flex text-sm ml-4 underline hover:text-green-400" onClick={() => {setShowHowToUseVWE(true);}}>VWE How-To</button>
+                    <button className="flex text-sm ml-4 underline hover:text-green-400" onClick={() => navigate('/about-the-developer')}>About</button>
                   </div>
                 )
               }

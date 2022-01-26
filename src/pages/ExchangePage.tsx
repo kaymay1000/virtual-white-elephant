@@ -48,7 +48,7 @@ const ExchangePage = ({
                   <PlayerDropdown players={players}></PlayerDropdown>
                 </div>
                 <div className="flex flex-col justify-end mx-2">
-                  <button className="border-solid border-2 border-black px-2 my-2 rounded hover:bg-green-100 text-sm md:text-base">Add</button>
+                  <button className="border-solid border-2 border-black px-2 my-2 rounded hover:bg-green-400 text-sm md:text-base">Add</button>
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ const ExchangePage = ({
           <div className="border-solid border-2 border-gray p-1 md:p-2 md:w-1/2 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Current Opener</h1>
             <p className="text-sm md:text-base">Someone's Name</p>
-            <button className="border-solid border-2 border-black px-2 rounded hover:bg-green-100 text-sm md:text-base">Advance to Next Opener</button>
+            <button className="border-solid border-2 border-black px-2 rounded hover:bg-green-400 text-sm md:text-base">Advance to Next Opener</button>
           </div>
           
           <div className="border-solid border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
@@ -88,7 +88,7 @@ const ExchangePage = ({
         
         <div className="flex justify-center md:justify-end mt-6">
           <button 
-            className="border-solid border-2 border-black px-2 mx-2 rounded hover:bg-green-100 text-sm md:text-base" 
+            className="border-solid border-2 border-black px-2 mx-2 rounded hover:bg-green-400 text-sm md:text-base" 
             onClick={() => navigate('/results')}
           >
             Complete Exchange

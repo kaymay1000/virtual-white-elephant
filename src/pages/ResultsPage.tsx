@@ -11,12 +11,10 @@ const ResultsPage = ({
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-4/5 lg:w-3/5 mx-auto">
-       <div>
-        <h1 className="text-2xl font-bold">Gift Exchange Results</h1>
-        <p>Awesome job! Hopefully you ended up with something great.</p>
-        <p className="pb-4 md:pb-8">Click Share to email a copy of the results to whoevers wants one.</p>
-      </div>
+    <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
+      <h1 className="text-2xl font-bold">Gift Exchange Results</h1>
+      <p>Awesome job! Hopefully you ended up with something great.</p>
+      <p className="pb-4 md:pb-8">Click Share to email a copy of the results to whoevers wants one.</p>
 
       <div className="max-w-full flex flex-col h-80 px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray">
         <h1 className="text-lg md:text-2xl">Results</h1>
@@ -31,7 +29,7 @@ const ResultsPage = ({
         <div className="flex justify-center md:justify-end mt-6">
           <button 
             onClick={() => navigate('/')}
-            className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
+            className='border-solid border-2 border-black px-2 rounded hover:bg-green-400'
           >
             Share
           </button>
