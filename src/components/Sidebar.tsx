@@ -52,7 +52,7 @@ const Sidebar = ({
             
             <div className="flex flex-col pt-2">
               <button 
-                className="flex justify-start text-sm hover:text-white py-2" 
+                className="flex justify-start text-sm underline hover:text-green-100 py-2" 
                 onClick={() => {
                   setShowSidebar(false);
                   setshowWhiteElephantBasics(true);
@@ -60,7 +60,7 @@ const Sidebar = ({
                   White Elephant Basics
               </button>
               <button 
-                className="flex justify-start text-sm hover:text-white py-2" 
+                className="flex justify-start text-sm underline hover:text-green-100 py-2" 
                 onClick={() => {
                   setShowSidebar(false);
                   setShowHowToUseVWE(true);
@@ -68,7 +68,7 @@ const Sidebar = ({
                   VWE How-To
               </button>
               <button 
-                className="flex justify-start text-sm hover:text-white py-2" 
+                className="flex justify-start text-sm underline hover:text-green-100 py-2" 
                 onClick={() => {
                   setShowSidebar(false);
                   navigate('/about-the-developer');
