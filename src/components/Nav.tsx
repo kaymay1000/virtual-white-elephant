@@ -1,5 +1,5 @@
 import Icon from './Icon';
-import MobileNav from './MobileNav';
+import Sidebar from './Sidebar';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useMedia } from 'use-media';
@@ -17,22 +17,21 @@ const Nav = ({
   setShowHowToUseVWE
 }: NavProps): JSX.Element => {
 
-  const [showMobileNav, setShowMobileNav] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   const isMobile = useMedia({maxWidth: '640px'});
   const navigate = useNavigate();
 
   return (
     <>
-      {/* mobile nav */}
-      <MobileNav
-        showMobileNav={showMobileNav}
-        setShowMobileNav={setShowMobileNav}
+      {/* mobile only */}
+      <Sidebar
+        showSidebar={showSidebar}
+        setShowSidebar={setShowSidebar}
         setshowWhiteElephantBasics={setshowWhiteElephantBasics}
         setShowHowToUseVWE={setShowHowToUseVWE}
       />
       
-      {/* large screen nav */}
       <header>
         <nav>
           <div className="w-full h-16 p-4 bg-green-100 text-center">
@@ -44,7 +43,7 @@ const Nav = ({
               }
 
               {isMobile ? (
-                <button className="flex items-center" onClick={() => setShowMobileNav(true)}>
+                <button className="flex items-center" onClick={() => setShowSidebar(true)}>
                   <Icon iconName={faBars}></Icon>
                 </button>
                 ): (
