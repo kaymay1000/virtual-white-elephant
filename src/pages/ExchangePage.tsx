@@ -87,7 +87,7 @@ const ExchangePage = ({
         
         <div className="flex justify-center md:justify-end mt-6">
           <button 
-            className="border-solid border-2 border-black px-2 mx-2 rounded hover:bg-green-100 text-sm md:text-base" 
+            className="border-solid border-2 border-black px-2 mx-2 rounded hover:bg-green-100" 
             onClick={() => navigate('/results')}
           >
             Complete Exchange

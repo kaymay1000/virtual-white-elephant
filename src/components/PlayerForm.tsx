@@ -54,7 +54,7 @@ const PlayerForm = () => {
                       <button 
                         type="button" 
                         onClick={() => {arrayHelpers.push({name: ''});}}
-                        className="border-solid border-2 border-black px-2 rounded hover:bg-green-100 text-sm md:text-base"
+                        className="border-solid border-2 border-black px-2 rounded hover:bg-green-100"
                       >
                         Add Player
                       </button>
@@ -64,14 +64,17 @@ const PlayerForm = () => {
               </FieldArray>
 
               <div className="flex flex-col">
-                <div className="flex justify-end mt-2">
-                  <p className="text-sm md:text-base">Total Players: {`${values.players.length}`}</p>
+                <div className="flex justify-center md:justify-end mt-2">
+                  <p>Total Players: {`${values.players.length}`}</p>
                 </div>
-                <div className="flex justify-end mt-2">
+                <div className="flex justify-center md:justify-end mt-2">
                   <button 
-                  type="submit" 
-                  className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-100 text-sm md:text-base" 
-                  onClick={() => navigate('/player-order')}>Next</button>          
+                    type="submit" 
+                    className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-100" 
+                    onClick={() => navigate('/player-order')}
+                  >
+                    Next
+                  </button>          
                 </div>
               </div>
           </Form>

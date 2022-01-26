@@ -28,11 +28,11 @@ const PlayerOrderPage = ({
         </div>
         
         <button 
-        onClick={() => navigate('/exchange')}
-        className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
-      >
-        Start Exchange
-      </button>
+          onClick={() => navigate('/exchange')}
+          className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
+        >
+          Start Exchange
+        </button>
       </div>
     </div>
   )
