@@ -29,18 +29,20 @@ const ExchangePage = ({
         
         <div className="border-solid border-2 border-gray p-2">
           <div className="flex flex-col">
-            <h1 className="font-bold">Add New Gift</h1>
-              <div className="flex justify-between">
-                <div className="flex flex-col w-1/2 mx-2">
-                  <label 
-                    htmlFor='gift name'
-                    className="text-sm md:text-base font-bold flex justify-center"
-                  >
-                    Gift Name
-                  </label>
-                  <input type="text" name="gift name" className="border-solid border-2 border-black px-1 my-2"/>
+            <div>
+              <h1 className="font-bold">Add New Gift</h1>
+            </div>
+            <div className="flex flex-col mx-auto md:flex-row md:justify-between">
+              <div className="flex flex-col mx-auto md:mx-4">
+                <label 
+                  htmlFor='gift name'
+                  className="flex justify-center"
+                >
+                  Gift Name
+                </label>
+                <input type="text" name="gift name" className="border-solid border-2 border-black px-1 my-2 w-44"/>
               </div>
-              <div className="flex flex-col w-1/2 mx-2">
+              <div className="flex flex-col mx-auto md:mx-4">
                 <PlayerDropdown players={players}></PlayerDropdown>
               </div>
             </div>

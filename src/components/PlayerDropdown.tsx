@@ -16,8 +16,8 @@ const PlayerDropdown = ({
   return (
     <>
       <Listbox value={selectedPlayer} onChange={setSelectedPlayer}>
-        <Listbox.Label className="font-bold">Player Name</Listbox.Label>
-          <div className="flex justify-between border-solid border-2 border-black px-2 my-2">
+        <Listbox.Label>Player Name</Listbox.Label>
+          <div className="flex justify-between border-solid border-2 border-black px-2 my-2 w-44">
             <p>{selectedPlayer}</p>
             <Listbox.Button>
               <Icon iconName={faChevronDown}></Icon>
