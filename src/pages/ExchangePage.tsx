@@ -27,16 +27,16 @@ const ExchangePage = ({
       </div>
       <div className="w-full h-full p-6 overflow-auto border-solid border-2 border-gray">
         
-        <div className="border-solid border-2 border-gray p-2">
+        <div className="border-solid border-2 border-gray p-2 md:mx-2">
           <div className="flex flex-col">
             <div>
-              <h1 className="font-bold">Add New Gift</h1>
+              <h1 className="font-bold text-sm md:text-base">Add New Gift</h1>
             </div>
             <div className="flex flex-col mx-auto md:flex-row md:justify-between">
               <div className="flex flex-col mx-auto md:mx-4">
                 <label 
                   htmlFor='gift name'
-                  className="flex justify-center"
+                  className="flex justify-center text-sm md:text-base"
                 >
                   Gift Name
                 </label>
@@ -49,22 +49,22 @@ const ExchangePage = ({
           </div>
         </div>
 
-        <div className="flex justify-between mt-6">
-          <div className="border-solid border-2 border-gray w-1/2 mx-2">
-            <h1 className="font-bold">Current Opener</h1>
-            <p>Someone's Name</p>
+        <div className="flex flex-col md:flex-row mt-6">
+          <div className="border-solid border-2 border-gray p-1 md:p-2 md:w-1/2 md:mx-2">
+            <h1 className="font-bold text-sm md:text-base">Current Opener</h1>
+            <p className="text-sm md:text-base">Someone's Name</p>
           </div>
           
-          <div className="border-solid border-2 border-gray w-1/2 mx-2">
-            <h1 className="font-bold">Next Opener</h1>
-            <p>Someone's Name</p>
+          <div className="border-solid border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
+            <h1 className="font-bold text-sm md:text-base">Next Opener</h1>
+            <p className="text-sm md:text-base">Someone's Name</p>
           </div>
         </div>
         
-        <div className="flex justify-between mt-6">
-          <div className="border-solid border-2 border-gray w-1/2 mx-2">
-            <h1 className="font-bold">Active Gifts</h1>
-            <div>
+        <div className="flex flex-col md:flex-row mt-6">
+          <div className="border-solid border-2 border-gray p-1 md:p-2 md:w-1/2 md:mx-2">
+            <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
+            <div className="text-sm md:text-base">
               <ol>
                 <li>This is where an active gift will go</li>
                 <li>This is where an active gift will go</li>
@@ -73,9 +73,9 @@ const ExchangePage = ({
             </div>
           </div>
           
-          <div className="border-solid border-2 border-gray w-1/2 mx-2">
-            <h1 className="font-bold">Frozen Gifts</h1>
-            <div>
+          <div className="border-solid border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
+            <h1 className="font-bold text-sm md:text-base">Frozen Gifts</h1>
+            <div className="text-sm md:text-base">
               <ol>
                 <li>This is where a frozen gift will go</li>
                 <li>This is where a frozen gift will go</li>
@@ -85,9 +85,9 @@ const ExchangePage = ({
           </div>
         </div>
         
-        <div className="flex justify-end mt-6">
+        <div className="flex justify-center md:justify-end mt-6">
           <button 
-            className="border-solid border-2 border-black px-2 rounded hover:bg-green-100" 
+            className="border-solid border-2 border-black px-2 mx-2 rounded hover:bg-green-100 text-sm md:text-base" 
             onClick={() => navigate('/results')}
           >
             Complete Exchange

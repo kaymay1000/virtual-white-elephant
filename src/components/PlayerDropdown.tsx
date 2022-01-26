@@ -16,9 +16,9 @@ const PlayerDropdown = ({
   return (
     <>
       <Listbox value={selectedPlayer} onChange={setSelectedPlayer}>
-        <Listbox.Label>Player Name</Listbox.Label>
-          <div className="flex justify-between border-solid border-2 border-black px-2 my-2 w-44">
-            <p>{selectedPlayer}</p>
+        <Listbox.Label className="text-sm md:text-base">Player Name</Listbox.Label>
+          <div className="flex justify-between items-center border-solid border-2 border-black px-2 my-2 w-44">
+            <p className="text-sm md:text-base">{selectedPlayer}</p>
             <Listbox.Button>
               <Icon iconName={faChevronDown}></Icon>
             </Listbox.Button>
@@ -29,12 +29,13 @@ const PlayerDropdown = ({
               <Listbox.Option
                 key={player.id}
                 value={player.name}
+                className="text-sm md:text-base"
               >
                 {/* active and selected are Render Props provided by HeadlessUI */}
                 {/* https://headlessui.dev/react/listbox#styling-the-active-and-selected-option */}
                 {({ active, selected }) => (
                   <li className={`flex justify-between ${active ? 'font-bold' : 'font-normal'}`}>
-                    <p>{player.name}</p>
+                    <p className="text-sm md:text-base">{player.name}</p>
                     <div>{selected && <Icon iconName={faCheckCircle}></Icon>}</div>
                   </li>
                 )}
