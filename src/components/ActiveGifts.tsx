@@ -1,10 +1,12 @@
-type ActiveGiftsProps = {
-  aProp?: boolean;
-}
+// type ActiveGiftsProps = {
+//   aProp?: boolean;
+// }
 
-const ActiveGifts = ({
-  aProp,
-}: ActiveGiftsProps): JSX.Element => {
+// const ActiveGifts = ({
+//   aProp,
+// }: ActiveGiftsProps): JSX.Element => {
+
+const ActiveGifts = (): JSX.Element => {
 
   return (
     <div className="text-sm md:text-base">

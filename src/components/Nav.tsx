@@ -7,13 +7,13 @@ import { useMedia } from 'use-media';
 import { useNavigate } from 'react-router-dom';
 
 export type NavProps = {
-  navItems?: JSX.Element;
+  // navItems?: JSX.Element;
   setshowWhiteElephantBasics: React.Dispatch<React.SetStateAction<boolean>>;
   setShowHowToUseVWE: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Nav = ({
-  navItems,
+  // navItems,
   setshowWhiteElephantBasics,
   setShowHowToUseVWE
 }: NavProps): JSX.Element => {

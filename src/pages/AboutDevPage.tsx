@@ -1,12 +1,6 @@
 import Emoji from '../components/Emoji';
 
-type AboutDevPageProps = {
-  aProp?: boolean;
-}
-
-const AboutDevPage = ({
-  aProp
-}: AboutDevPageProps): JSX.Element => {
+const AboutDevPage = (): JSX.Element => {
   return (
     <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
       <h1 className="text-2xl font-bold">About the Developer</h1>

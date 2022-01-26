@@ -1,10 +1,12 @@
-type FrozenGiftsProps = {
-  aProp?: boolean;
-}
+// type FrozenGiftsProps = {
+//   aProp?: boolean;
+// }
 
-const FrozenGifts = ({
-  aProp,
-}: FrozenGiftsProps): JSX.Element => {
+// const FrozenGifts = ({
+//   aProp,
+// }: FrozenGiftsProps): JSX.Element => {
+
+const FrozenGifts = (): JSX.Element => {
 
   return (
     <div className="text-sm md:text-base">
