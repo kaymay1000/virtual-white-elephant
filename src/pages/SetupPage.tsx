@@ -1,5 +1,13 @@
 import PlayerForm from '../components/PlayerForm';
 
+// type SetupPageProps = {
+//   aProp?: boolean;
+// }
+
+// const SetupPage = ({
+//   aProp
+// }: SetupPageProps): JSX.Element => {
+
 const SetupPage = () => {
 
   return (

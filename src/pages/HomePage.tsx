@@ -1,13 +1,7 @@
 import Emoji from '../components/Emoji';
 import { useNavigate } from 'react-router-dom';
 
-type HomePageProps = {
-  aProp?: boolean;
-}
-
-const HomePage = ({
-  aProp
-}: HomePageProps): JSX.Element => {
+const HomePage = (): JSX.Element => {
 
   const navigate = useNavigate();
 

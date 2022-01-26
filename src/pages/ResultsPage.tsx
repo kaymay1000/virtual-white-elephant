@@ -1,13 +1,15 @@
 import Emoji from '../components/Emoji';
 import { useNavigate } from 'react-router-dom';
 
-type ResultsPageProps = {
-  aProp?: boolean;
-}
+// type ResultsPageProps = {
+//   aProp?: boolean;
+// }
 
-const ResultsPage = ({
-  aProp
-}: ResultsPageProps): JSX.Element => {
+// const ResultsPage = ({
+//   aProp
+// }: ResultsPageProps): JSX.Element => {
+
+const ResultsPage = (): JSX.Element => {
 
   const navigate = useNavigate();
 

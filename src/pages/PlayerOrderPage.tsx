@@ -1,12 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 
-type PlayerOrderPageProps = {
-  aProp?: boolean;
-}
+// type PlayerOrderPageProps = {
+//   aProp?: boolean;
+// }
 
-const PlayerOrderPage = ({
-  aProp
-}: PlayerOrderPageProps): JSX.Element => {
+// const PlayerOrderPage = ({
+//   aProp
+// }: PlayerOrderPageProps): JSX.Element => {
+
+const PlayerOrderPage = (): JSX.Element => {
 
   const navigate = useNavigate();
 

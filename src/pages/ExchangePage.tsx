@@ -3,13 +3,15 @@ import ActiveGifts from '../components/ActiveGifts';
 import FrozenGifts from '../components/FrozenGifts';
 import { useNavigate } from 'react-router-dom';
 
-type ExchangePageProps = {
-  aProp?: boolean;
-}
+// type ExchangePageProps = {
+//   aProp?: boolean;
+// }
 
-const ExchangePage = ({
-  aProp
-}: ExchangePageProps): JSX.Element => {
+// const ExchangePage = ({
+//   aProp
+// }: ExchangePageProps): JSX.Element => {
+
+const ExchangePage = (): JSX.Element => {
 
   const navigate = useNavigate();
 

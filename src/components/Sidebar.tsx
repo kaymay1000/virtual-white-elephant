@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Icon from './Icon';
-import { NavProps } from './Nav';
+// import { NavProps } from './Nav';
 import { Dialog, Transition } from '@headlessui/react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
