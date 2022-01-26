@@ -1,5 +1,6 @@
 import Icon from './Icon';
 import Sidebar from './Sidebar';
+import Emoji from './Emoji';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useMedia } from 'use-media';
@@ -37,9 +38,9 @@ const Nav = ({
           <div className="w-full h-16 p-4 bg-green-100 text-center">
             <div className="flex justify-between">
               {isMobile ? 
-                <button className="text-2xl flex" onClick={() => navigate('/')}>VWE</button>
+                <button className="text-2xl flex" onClick={() => navigate('/')}>VWE <Emoji label='elephant emoji' symbol='🐘'/></button>
                : 
-                <button className="text-2xl flex" onClick={() => navigate('/')}>Virtual White Elephant</button>
+                <button className="text-2xl flex" onClick={() => navigate('/')}>Virtual White Elephant <Emoji label='elephant emoji' symbol='🐘'/></button>
               }
 
               {isMobile ? (

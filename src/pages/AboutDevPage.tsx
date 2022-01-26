@@ -15,12 +15,12 @@ const AboutDevPage = ({
 
       <div className="mt-6">
         <div>
-          <h2 className="font-bold">Brief professional background <Emoji label='computer emoji' symbol='💻'/></h2>
+          <h2 className="font-bold">Brief professional background <Emoji label='laptop emoji' symbol='💻'/></h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum aut nobis doloremque, aliquid eum at tempore, vero sapiente ducimus atque cumque, autem obcaecati asperiores mollitia culpa deleniti beatae quae non.</p>
         </div>
         
         <div className="mt-6">
-          <h2 className="font-bold">Why I created VWE <Emoji label='elephant emoji' symbol='🐘'/></h2>
+          <h2 className="font-bold">Why I created VWE <Emoji label='thinking face emoji' symbol='🤔'/></h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum aut nobis doloremque, aliquid eum at tempore, vero sapiente ducimus atque cumque, autem obcaecati asperiores mollitia culpa deleniti beatae quae non.</p>
         </div>
 
