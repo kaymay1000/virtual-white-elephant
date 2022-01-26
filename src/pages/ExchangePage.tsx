@@ -45,6 +45,10 @@ const ExchangePage = ({
               <div className="flex flex-col mx-auto md:mx-4">
                 <PlayerDropdown players={players}></PlayerDropdown>
               </div>
+              <div className="flex flex-col justify-end mx-4">
+                <button className="border-solid border-2 border-black px-2 my-2 rounded hover:bg-green-100">Add</button>
+              </div>
+              
             </div>
           </div>
         </div>
