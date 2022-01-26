@@ -17,7 +17,7 @@ const PlayerOrderPage = ({
         <p>Players will open gifts in the order shown below.</p>
         <p className="pb-4 md:pb-8">There's no need to memorize your number. We'll let you know when it's your turn.</p>
       </div>
-      <div className="max-w-full h-80 px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray">
+      <div className="max-w-full flex flex-col h-80 px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray">
         <h1 className="text-lg md:text-2xl">Player Order</h1>
         <div className="my-4">
           <ol className="list-decimal list-inside">
@@ -27,12 +27,15 @@ const PlayerOrderPage = ({
           </ol>
         </div>
         
-        <button 
-          onClick={() => navigate('/exchange')}
-          className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
-        >
-          Start Exchange
-        </button>
+        <div className="flex justify-center md:justify-end mt-6">
+          <button 
+            onClick={() => navigate('/exchange')}
+            className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
+          >
+            Start Exchange
+          </button>
+        </div>
+        
       </div>
     </div>
   )

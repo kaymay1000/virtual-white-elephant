@@ -34,10 +34,10 @@ const PlayerDropdown = ({
                 {/* active and selected are Render Props provided by HeadlessUI */}
                 {/* https://headlessui.dev/react/listbox#styling-the-active-and-selected-option */}
                 {({ active, selected }) => (
-                  <li className={`flex justify-between ${active ? 'font-bold' : 'font-normal'}`}>
+                  <div className={`flex justify-between ${active ? 'font-bold' : 'font-normal'}`}>
                     <p className="text-sm md:text-base">{player.name}</p>
                     <div>{selected && <Icon iconName={faCheckCircle}></Icon>}</div>
-                  </li>
+                  </div>
                 )}
               </Listbox.Option>
             ))}
