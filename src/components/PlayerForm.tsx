@@ -23,44 +23,46 @@ const PlayerForm = () => {
         onSubmit={(values) => console.log('values: ', values)}
       >
         {({values}) => (
-            <Form>
-              {/* https://formik.org/docs/examples/field-arrays */}
+          <Form>
+            {/* https://formik.org/docs/examples/field-arrays */}
               <FieldArray name="players">
                 {arrayHelpers => (
-                  <div className="my-4">
-                    {values.players.length > 0 && (
-                      values.players.map((player, index) => (
-                        <div key={index} className="flex justify-center">
-                          <label 
-                            htmlFor={`players.${index}.name`}
-                            className="text-sm md:text-base px-2 flex items-center"
-                          >
-                            Name
-                          </label>
-                          <Field 
-                            name={`players.${index}.name`}
-                            className="border-solid border-2 border-black px-1 my-2 w-40 md:w-auto"
-                          />
-                          <button
-                            type="button"
-                            onClick={() => arrayHelpers.remove(index)}
-                            className="px-2 text-sm md:text-base"
-                          >
-                            <Icon iconName={faTrash}></Icon>
-                          </button>
-                        </div>
-                      ))
-                    )}
-                    <button 
-                      type="button" 
-                      onClick={() => {arrayHelpers.push({name: ''});}}
-                      className="border-solid border-2 border-black px-2 rounded hover:bg-green-100 text-sm md:text-base"
-                    >
-                      Add Player
-                    </button>
-                  </div>
+                    <div className="my-4">
+                      {values.players.length > 0 && (
+                        values.players.map((player, index) => (
+                          <div key={index} className="flex justify-center">
+                            <label 
+                              htmlFor={`players.${index}.name`}
+                              className="text-sm md:text-base px-2 flex items-center"
+                            >
+                              Name
+                            </label>
+                            <Field 
+                              name={`players.${index}.name`}
+                              className="border-solid border-2 border-black px-1 my-2 w-40 md:w-auto"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => arrayHelpers.remove(index)}
+                              className="px-2 text-sm md:text-base"
+                            >
+                              <Icon iconName={faTrash}></Icon>
+                            </button>
+                          </div>
+                        ))
+                      )}
+                      <button 
+                        type="button" 
+                        onClick={() => {arrayHelpers.push({name: ''});}}
+                        className="border-solid border-2 border-black px-2 rounded hover:bg-green-100 text-sm md:text-base"
+                      >
+                        Add Player
+                      </button>
+                    </div>
+                  
                 )}
               </FieldArray>
+
               <div className="flex flex-col">
                 <div className="flex justify-end mt-2">
                   <p className="text-sm md:text-base">Total Players: {`${values.players.length}`}</p>
@@ -71,12 +73,10 @@ const PlayerForm = () => {
                   className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-100 text-sm md:text-base" 
                   onClick={() => navigate('/player-order')}>Next</button>          
                 </div>
-                
               </div>
-             
-            </Form>
-          )}
-        </Formik>
+          </Form>
+        )}
+      </Formik>
     </div>
   )
 };
