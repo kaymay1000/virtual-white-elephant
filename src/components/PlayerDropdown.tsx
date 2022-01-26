@@ -12,8 +12,9 @@ const PlayerDropdown = ({
 }: PlayerDropdownProps): JSX.Element => {
 
   const [selectedPlayer, setSelectedPlayer] = useState(players[0].name);
+  
   return (
-    <div className="w-1/2">
+    <div className="w-1/2 mx-auto py-4">
       <Listbox value={selectedPlayer} onChange={setSelectedPlayer}>
         <Listbox.Label className='font-bold'>Player Name:</Listbox.Label>
           <div className="flex justify-between border-solid border-2 border-black p-2">

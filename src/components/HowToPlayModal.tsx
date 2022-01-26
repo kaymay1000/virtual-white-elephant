@@ -26,13 +26,17 @@ const HowToPlayModal = ({
           <div className="px-4 pb-4">
             <Dialog.Title className="text-center font-bold">How To Play</Dialog.Title>
             <div className="py-2">
-              <p>This is the where the gameplay instructions will go.</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt architecto magnam neque unde perferendis, 
-                sed tempora, ab earum eos praesentium a corrupti dignissimos possimus laborum animi nisi quos in harum.
-              </p>
+              <ul>
+                <li>Designate one participant to be the Host</li>
+                <li>Each Participant places their gift in view of their webcam</li>
+                <li>Each Participant "draws" a number at random</li>
+                <li>Participant #1 chooses which gift they'd like to "open", and has the Participant who brought that gift unveil it on camera for all to see</li>
+                <li>Participant #2 has two options: choose another gift to open, or steal Participant #1's gift</li>
+                <li>If your gift is stolen, you may either choose a new gift to open or steal another gift</li>
+                <li>A gift can only be stolen twice after its initial opening-- after two steals, the gift "dies" and remains with its third/final owner</li>
+                <li>Gameplay continues sequentially until each Participant has gotten a chance to either open a new gift, or steal an existing one</li>
+              </ul>
             </div>
-            
           </div>
         </div>
       </div>
