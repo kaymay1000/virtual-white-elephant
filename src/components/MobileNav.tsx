@@ -8,14 +8,16 @@ import { useNavigate } from 'react-router-dom';
 type MobileNavProps = {
   showMobileNav: boolean;
   setShowMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
-  setShowHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
+  setshowWhiteElephantBasics: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowHowToUseVWE: React.Dispatch<React.SetStateAction<boolean>>;
   // navItems: NavProps;
 }
 
 const MobileNav = ({
   showMobileNav,
   setShowMobileNav,
-  setShowHowToPlay
+  setshowWhiteElephantBasics,
+  setShowHowToUseVWE
   // navItems
 }: MobileNavProps): JSX.Element => {
 
@@ -53,17 +55,25 @@ const MobileNav = ({
                 className="flex justify-start text-sm hover:text-white py-2" 
                 onClick={() => {
                   setShowMobileNav(false);
-                  setShowHowToPlay(true);
+                  setshowWhiteElephantBasics(true);
                 }}>
-                  How to Play
-                </button>
+                  White Elephant Basics
+              </button>
+              <button 
+                className="flex justify-start text-sm hover:text-white py-2" 
+                onClick={() => {
+                  setShowMobileNav(false);
+                  setShowHowToUseVWE(true);
+                }}>
+                  VWE How-To
+              </button>
               <button 
                 className="flex justify-start text-sm hover:text-white py-2" 
                 onClick={() => {
                   setShowMobileNav(false);
                   navigate('/about-the-developer');
                 }}>
-                  About the Developer
+                  About
                 </button>
             </div>
           </div>

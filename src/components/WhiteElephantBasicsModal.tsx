@@ -2,29 +2,29 @@ import Icon from './Icon';
 import { Dialog } from '@headlessui/react';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-type HowToPlayModalProps = {
-  showHowToPlay: boolean;
-  setShowHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
+type WhiteElephantBasicsModalProps = {
+  showWhiteElephantBasics: boolean;
+  setshowWhiteElephantBasics: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const HowToPlayModal = ({
-  showHowToPlay,
-  setShowHowToPlay
-}: HowToPlayModalProps ): JSX.Element => {
+const WhiteElephantBasicsModal = ({
+  showWhiteElephantBasics,
+  setshowWhiteElephantBasics
+}: WhiteElephantBasicsModalProps ): JSX.Element => {
   return (
-    <Dialog open={showHowToPlay} onClose={setShowHowToPlay} className="fixed z-10 inset-0 overflow-y-auto">
+    <Dialog open={showWhiteElephantBasics} onClose={setshowWhiteElephantBasics} className="fixed z-10 inset-0 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen">
         <Dialog.Overlay className="fixed inset-0 bg-black opacity-30"/>
 
-        <div className="relative bg-white rounded max-w-xs md:max-w-lg lg:max-w-xl p-4 mx-auto">
+        <div className="relative bg-white rounded max-w-xs md:max-w-lg lg:max-w-xl p-4 my-12 mx-auto">
           <div className="flex justify-end">
-            <button onClick={() => setShowHowToPlay(false)}>
+            <button onClick={() => setshowWhiteElephantBasics(false)}>
               <Icon iconName={faTimes}/>
             </button>
           </div>
           
           <div className="px-4 pb-4">
-            <Dialog.Title className="text-center font-bold">How To Play</Dialog.Title>
+            <Dialog.Title className="text-center font-bold">White Elephant Basics</Dialog.Title>
             <div className="py-2">
               <ul className="list-disc">
                 <li>Designate one player to be the host, who will be in charge of updating VWE throughout the exchange.</li>
@@ -44,4 +44,4 @@ const HowToPlayModal = ({
   )
 } 
 
-export default HowToPlayModal;
+export default WhiteElephantBasicsModal;

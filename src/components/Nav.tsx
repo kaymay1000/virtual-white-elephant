@@ -7,12 +7,14 @@ import { useNavigate } from 'react-router-dom';
 
 export type NavProps = {
   navItems?: JSX.Element;
-  setShowHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
+  setshowWhiteElephantBasics: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowHowToUseVWE: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Nav = ({
   navItems,
-  setShowHowToPlay
+  setshowWhiteElephantBasics,
+  setShowHowToUseVWE
 }: NavProps): JSX.Element => {
 
   const [showMobileNav, setShowMobileNav] = useState(false);
@@ -26,7 +28,8 @@ const Nav = ({
       <MobileNav
         showMobileNav={showMobileNav}
         setShowMobileNav={setShowMobileNav}
-        setShowHowToPlay={setShowHowToPlay}
+        setshowWhiteElephantBasics={setshowWhiteElephantBasics}
+        setShowHowToUseVWE={setShowHowToUseVWE}
       />
       
       {/* large screen nav */}
@@ -46,8 +49,9 @@ const Nav = ({
                 </button>
                 ): (
                   <div className="flex items-center">
-                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {setShowHowToPlay(true);}}>How to Play</button>
-                    <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/about-the-developer')}>About the Developer</button>
+                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {setshowWhiteElephantBasics(true);}}>White Elephant Basics</button>
+                    <button className="flex text-sm ml-4 hover:underline" onClick={() => {setShowHowToUseVWE(true);}}>VWE How-To</button>
+                    <button className="flex text-sm ml-4 hover:underline" onClick={() => navigate('/about-the-developer')}>About</button>
                   </div>
                 )
               }
