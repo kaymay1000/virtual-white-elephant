@@ -7,24 +7,21 @@ import { useNavigate } from 'react-router-dom';
 
 export type NavProps = {
   navItems?: JSX.Element;
-  showHowToPlay: boolean;
   setShowHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Nav = ({
   navItems,
-  showHowToPlay,
   setShowHowToPlay
 }: NavProps): JSX.Element => {
 
   const [showMobileNav, setShowMobileNav] = useState(false);
-  // const [showHowToPlay, setShowHowToPlay] = useState(false);
 
   const isMobile = useMedia({maxWidth: '640px'});
   const navigate = useNavigate();
 
   return (
-    <div>
+    <>
       {/* mobile nav */}
       <MobileNav
         showMobileNav={showMobileNav}
@@ -57,11 +54,7 @@ const Nav = ({
           </div>
         </nav>
       </header>
-
-      {/* { showHowToPlay ? <HowToPlayModal showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/> : <></> } */}
-      
-    </div>
-   
+    </>
   )
 }
 

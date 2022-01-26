@@ -31,7 +31,7 @@ const AppWrapper = () => {
   return (
     <Router>
       <Layout>
-         <App className="min-h-screen"/>
+         <App/>
       </Layout>
     </Router>
   )

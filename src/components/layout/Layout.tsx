@@ -14,14 +14,16 @@ const Layout = ({
   const [showHowToPlay, setShowHowToPlay] = useState(false);
 
   return (
-    <>
-      <Nav showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/>
-      <main>
-        {children}
+    // TW sticky footer how-to: https://www.gomasuga.com/blog/creating-a-sticky-footer-with-tailwind
+    // div below serving as body 
+    <div className="flex flex-col min-h-screen">
+      <Nav setShowHowToPlay={setShowHowToPlay}/>
+      <main className="flex-auto">
         {showHowToPlay ? <HowToPlayModal showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/> : <></>}
+        {children}
       </main>
       <Footer/>
-    </>
+    </div>
   )
 }
 
