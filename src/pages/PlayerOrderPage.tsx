@@ -11,21 +11,29 @@ const PlayerOrderPage = ({
   const navigate = useNavigate();
 
   return (
-    <div className="text-center">
-      <div>This is the player order page!</div>
-      <div className="py-4">
-        <ol className="list-decimal list-inside">
-          <li>Player One</li>
-          <li>Player Two</li>
-          <li>Player Three</li>
-        </ol>
+    <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
+       <div>
+        <h1 className="text-2xl font-bold">It's go time!</h1>
+        <p>Players will open gifts in the order shown below.</p>
+        <p className="pb-4 md:pb-8">There's no need to memorize your number. We'll let you know when it's your turn.</p>
       </div>
-      <button 
+      <div className="max-w-full h-80 px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray">
+        <h1 className="text-lg md:text-2xl">Player Order</h1>
+        <div className="my-4">
+          <ol className="list-decimal list-inside">
+            <li>Player One</li>
+            <li>Player Two</li>
+            <li>Player Three</li>
+          </ol>
+        </div>
+        
+        <button 
         onClick={() => navigate('/exchange')}
         className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
       >
         Start Exchange
       </button>
+      </div>
     </div>
   )
 }
