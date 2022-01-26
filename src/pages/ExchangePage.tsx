@@ -1,4 +1,6 @@
 import PlayerDropdown from '../components/PlayerDropdown';
+import ActiveGifts from '../components/ActiveGifts';
+import FrozenGifts from '../components/FrozenGifts';
 import { useNavigate } from 'react-router-dom';
 
 type ExchangePageProps = {
@@ -61,31 +63,19 @@ const ExchangePage = ({
           
           <div className="border-solid border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Next Opener</h1>
-            <p className="text-sm md:text-base">Someone's Name</p>
+            <p className="text-sm md:text-base">Someone Else's Name</p>
           </div>
         </div>
         
         <div className="flex flex-col md:flex-row mt-6">
           <div className="border-solid border-2 border-gray p-1 md:p-2 md:w-1/2 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
-            <div className="text-sm md:text-base">
-              <ol>
-                <li>This is where an active gift will go</li>
-                <li>This is where an active gift will go</li>
-                <li>This is where an active gift will go</li>
-              </ol>
-            </div>
+            <ActiveGifts/>
           </div>
           
           <div className="border-solid border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Frozen Gifts</h1>
-            <div className="text-sm md:text-base">
-              <ol>
-                <li>This is where a frozen gift will go</li>
-                <li>This is where a frozen gift will go</li>
-                <li>This is where a frozen gift will go</li>
-              </ol>
-            </div>
+            <FrozenGifts/>
           </div>
         </div>
         
