@@ -13,6 +13,13 @@ const PlayerOrderPage = ({
   return (
     <div className="text-center">
       <div>This is the player order page!</div>
+      <div className="py-4">
+        <ol className="list-decimal list-inside">
+          <li>Player One</li>
+          <li>Player Two</li>
+          <li>Player Three</li>
+        </ol>
+      </div>
       <button 
         onClick={() => navigate('/exchange')}
         className='border-solid border-2 border-black px-2 rounded hover:bg-green-100'
