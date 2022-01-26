@@ -18,8 +18,11 @@ const Layout = ({
     // div below serving as body 
     <div className="flex flex-col min-h-screen">
       <Nav setShowHowToPlay={setShowHowToPlay}/>
-      <main className="flex-auto">
-        {children}
+      <main className="flex-auto py-10 px-8 w-full max-w-7xl mx-auto">
+        <div className="text-center">
+          {children}
+        </div>
+        
         {showHowToPlay ? <HowToPlayModal showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/> : <></>}
       </main>
       <Footer/>

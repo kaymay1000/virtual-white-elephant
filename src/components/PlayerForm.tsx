@@ -16,8 +16,8 @@ const PlayerForm = () => {
   }
 
   return (
-    <div className="max-w-full mt-4 p-6 md:mx-28 lg:mx-60 overflow-auto border-solid border-2 border-gray player-names-container">
-      <h1 className="text-2xl">Player Names</h1>
+    <div className="max-w-full px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray player-names-container">
+      <h1 className="text-lg md:text-2xl">Player Names</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => console.log('values: ', values)}
@@ -33,18 +33,18 @@ const PlayerForm = () => {
                         <div key={index} className="flex justify-center">
                           <label 
                             htmlFor={`players.${index}.name`}
-                            className="text-sm px-2 flex items-center"
+                            className="text-sm md:text-base px-2 flex items-center"
                           >
-                              Name
-                            </label>
+                            Name
+                          </label>
                           <Field 
                             name={`players.${index}.name`}
-                            className="border-solid border-2 border-black px-1 my-2"
+                            className="border-solid border-2 border-black px-1 my-2 w-40 md:w-auto"
                           />
                           <button
                             type="button"
                             onClick={() => arrayHelpers.remove(index)}
-                            className="px-2 text-sm"
+                            className="px-2 text-sm md:text-base"
                           >
                             <Icon iconName={faTrash}></Icon>
                           </button>
@@ -54,7 +54,7 @@ const PlayerForm = () => {
                     <button 
                       type="button" 
                       onClick={() => {arrayHelpers.push({name: ''});}}
-                      className="border-solid border-2 border-black px-2 rounded hover:bg-green-100"
+                      className="border-solid border-2 border-black px-2 rounded hover:bg-green-100 text-sm md:text-base"
                     >
                       Add Player
                     </button>
@@ -63,12 +63,12 @@ const PlayerForm = () => {
               </FieldArray>
               <div className="flex flex-col">
                 <div className="flex justify-end mt-2">
-                  <p>Total Players: {`${values.players.length}`}</p>
+                  <p className="text-sm md:text-base">Total Players: {`${values.players.length}`}</p>
                 </div>
                 <div className="flex justify-end mt-2">
                   <button 
                   type="submit" 
-                  className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-100" 
+                  className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-100 text-sm md:text-base" 
                   onClick={() => navigate('/player-order')}>Next</button>          
                 </div>
                 

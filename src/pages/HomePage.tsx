@@ -11,7 +11,7 @@ const HomePage = ({
   const navigate = useNavigate();
 
   return (
-    <div className="text-center">
+    <div className="w-full md:w-4/5 lg:w-3/5 mx-auto">
       <h1 className="text-2xl">Virtual White Elephant</h1>
       <div className="py-4">
         <p>
