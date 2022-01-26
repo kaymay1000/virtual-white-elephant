@@ -3,7 +3,6 @@ import {
   useRoutes,
 } from 'react-router-dom';
 import Layout from './components/layout/Layout';
-import Main from './components/Main';
 import HomePage from './pages/HomePage';
 import SetupPage from './pages/SetupPage';
 import PlayerOrderPage from './pages/PlayerOrderPage';
@@ -14,7 +13,6 @@ import AboutDevPage from './pages/AboutDevPage';
 const App = () => {
   let routes = useRoutes([
     {path: "/", element: <HomePage/>},
-    {path: "/main", element: <Main aProp={'foo'} />},
     {path: "/setup", element: <SetupPage/>},
     {path: "/player-order", element: <PlayerOrderPage/>},
     {path: "/exchange", element: <ExchangePage/>},
