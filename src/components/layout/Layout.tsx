@@ -19,8 +19,8 @@ const Layout = ({
     <div className="flex flex-col min-h-screen">
       <Nav setShowHowToPlay={setShowHowToPlay}/>
       <main className="flex-auto">
-        {showHowToPlay ? <HowToPlayModal showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/> : <></>}
         {children}
+        {showHowToPlay ? <HowToPlayModal showHowToPlay={showHowToPlay} setShowHowToPlay={setShowHowToPlay}/> : <></>}
       </main>
       <Footer/>
     </div>
