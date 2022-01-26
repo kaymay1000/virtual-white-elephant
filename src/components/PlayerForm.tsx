@@ -16,7 +16,7 @@ const PlayerForm = () => {
   }
 
   return (
-    <div className="max-w-full px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray player-names-container">
+    <div className="max-w-full h-96 px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray">
       <h1 className="text-lg md:text-2xl">Player Names</h1>
       <Formik
         initialValues={initialValues}
