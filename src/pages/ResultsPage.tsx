@@ -13,12 +13,11 @@ const ResultsPage = ({
 
   return (
     <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
-      <h1 className="text-2xl font-bold">Gift Exchange Results</h1>
+      <h1 className="text-2xl font-bold">Results</h1>
       <p>Nicely done, everyone! Enjoy those shiny new gifts. <Emoji label='sparkles emoji' symbol='✨'/></p>
       <p className="pb-4 md:pb-8">Click Share to email a copy of the results to whoever wants one.</p>
 
       <div className="max-w-full flex flex-col h-80 px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray">
-        <h1 className="text-lg md:text-2xl">Results</h1>
         <div className="my-4">
           <ol className="list-none list-inside">
             <li>Player 1: Gift 1</li>

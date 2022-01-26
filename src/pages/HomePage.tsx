@@ -13,11 +13,11 @@ const HomePage = ({
 
   return (
     <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
-      <h1 className="text-2xl font-bold">Virtual White Elephant <Emoji label='elephant emoji' symbol='🐘'/></h1>
+      <h1 className="text-2xl font-bold">Virtual White Elephant <Emoji label='wrapped gift emoji' symbol='🎁'/></h1>
       <div className="py-4">
         <p>
           Don't get stuck with those ugly socks (nobody wants your re-gift, Karen!), or that mystery-flavored jam 
-          that's at least a decade old... let Virtual White Elephant handle the logistics of hosting a virtual gift exchange, 
+          that's at <em>least</em> a decade old... let Virtual White Elephant handle the logistics of hosting a virtual gift exchange, 
           so all you have to do is kick back, relax, and watch your foolproof gift-swapping strategy unfold.
         </p>
       </div>

@@ -22,7 +22,7 @@ const ExchangePage = ({
   return (
     <div className="w-full mx-auto max-h-screen overflow-auto">
       <div>
-        <h1 className="text-2xl font-bold">Gift Exchange</h1>
+        <h1 className="text-2xl font-bold">Exchange</h1>
         {/* TODO: eventually want to render the name of the Host here */}
         <p>Host, this is your time to shine!</p>
         <p className="pb-4 md:pb-8">Log each gift as it's opened, as well as any time a gift is stolen.</p>
