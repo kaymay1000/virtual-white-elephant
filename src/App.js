@@ -10,14 +10,12 @@ import PlayerOrderPage from './pages/PlayerOrderPage';
 import ExchangePage from './pages/ExchangePage';
 import ResultsPage from './pages/ResultsPage';
 import AboutDevPage from './pages/AboutDevPage';
-// import SetupPageTemp from './pages/SetupPageTemp';
 
 const App = () => {
   let routes = useRoutes([
     {path: "/", element: <HomePage/>},
     {path: "/main", element: <Main aProp={'foo'} />},
     {path: "/setup", element: <SetupPage/>},
-    // {path: "/setup", element: <SetupPageTemp/>}
     {path: "/player-order", element: <PlayerOrderPage/>},
     {path: "/exchange", element: <ExchangePage/>},
     {path: "/results", element: <ResultsPage/>},

@@ -26,6 +26,7 @@ const Nav = ({
       <MobileNav
         showMobileNav={showMobileNav}
         setShowMobileNav={setShowMobileNav}
+        setShowHowToPlay={setShowHowToPlay}
       />
       
       {/* large screen nav */}

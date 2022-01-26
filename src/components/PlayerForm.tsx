@@ -1,4 +1,4 @@
-import { Formik, Form, Field, FieldArray, ErrorMessage } from 'formik';
+import { Formik, Form, Field, FieldArray } from 'formik';
 import Icon from './Icon';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
@@ -15,14 +15,6 @@ const PlayerForm = () => {
     players: [{name: ''}]
   }
 
-  // const validate = value => {
-  //   let error;
-  //   if (!value) {
-  //     error = 'Player name required.'
-  //   }
-  //   return error;
-  // }
-
   return (
     <div className="max-w-full mt-4 p-6 md:mx-28 lg:mx-60 overflow-auto border-solid border-2 border-gray player-names-container">
       <h1 className="text-2xl">Player Names</h1>
@@ -30,7 +22,6 @@ const PlayerForm = () => {
         initialValues={initialValues}
         onSubmit={(values) => console.log('values: ', values)}
       >
-        {/* {({values, touched, errors}) => ( */}
         {({values}) => (
             <Form>
               {/* https://formik.org/docs/examples/field-arrays */}
@@ -44,13 +35,11 @@ const PlayerForm = () => {
                             htmlFor={`players.${index}.name`}
                             className="text-sm px-2 flex items-center"
                           >
-                              {/* {`${index + 1}`} */}
                               Name
                             </label>
                           <Field 
                             name={`players.${index}.name`}
                             className="border-solid border-2 border-black px-1 my-2"
-                            // validate={validate}
                           />
                           <button
                             type="button"
@@ -59,7 +48,6 @@ const PlayerForm = () => {
                           >
                             <Icon iconName={faTrash}></Icon>
                           </button>
-                          {/* {errors.name && touched.name && <div>{errors.name}</div>} */}
                         </div>
                       ))
                     )}

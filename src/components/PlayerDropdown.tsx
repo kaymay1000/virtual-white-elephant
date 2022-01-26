@@ -5,17 +5,7 @@ import { faChevronDown, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 type PlayerDropdownProps = {
   players: Array<{id: number, name: string}>;
-  // diff syntax
-  // players: {id: number, name: string}[];
 }
-
-// interfaces have slightly diff syntax and are extendable, whereas types are not
-// typically want to use types over interfaces
-// https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces
-
-// interface PlayerDropdownProps  {
-//   players: Array<{id: number, name: string}>;
-// }
 
 const PlayerDropdown = ({
   players,

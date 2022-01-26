@@ -8,12 +8,14 @@ import { useNavigate } from 'react-router-dom';
 type MobileNavProps = {
   showMobileNav: boolean;
   setShowMobileNav: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowHowToPlay: React.Dispatch<React.SetStateAction<boolean>>;
   // navItems: NavProps;
 }
 
 const MobileNav = ({
   showMobileNav,
   setShowMobileNav,
+  setShowHowToPlay
   // navItems
 }: MobileNavProps): JSX.Element => {
 
@@ -47,8 +49,22 @@ const MobileNav = ({
             </div>
             
             <div className="flex flex-col pt-2">
-              <button className="flex justify-start text-sm hover:text-white py-2" onClick={() => navigate('/how-to-play')}>How to Play</button>
-              <button className="flex justify-start text-sm hover:text-white py-2" onClick={() => navigate('/about-the-developer')}>About the Developer</button>
+              <button 
+                className="flex justify-start text-sm hover:text-white py-2" 
+                onClick={() => {
+                  setShowMobileNav(false);
+                  setShowHowToPlay(true);
+                }}>
+                  How to Play
+                </button>
+              <button 
+                className="flex justify-start text-sm hover:text-white py-2" 
+                onClick={() => {
+                  setShowMobileNav(false);
+                  navigate('/about-the-developer');
+                }}>
+                  About the Developer
+                </button>
             </div>
           </div>
         </Transition.Child>

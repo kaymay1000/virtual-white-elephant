@@ -4,19 +4,6 @@ interface MainProps {
   aProp?: boolean;
 }
 
-// ex of how to declare a type and then use it
-
-// type PlayerProps = {
-//   id: number;
-//   name: string;
-// }
-
-// const players: PlayerProps[] = [
-//   {id: 1, name: 'Beau'}, 
-//   {id: 2, name: 'Winston'}, 
-//   {id: 3, name: 'Greg'}
-// ];
-
 const players = [
   {id: 1, name: 'Beau'}, 
   {id: 2, name: 'Winston'}, 
