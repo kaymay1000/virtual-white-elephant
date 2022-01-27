@@ -8,7 +8,7 @@ interface PlayerFormValues {
 }
 
 const PlayerForm = () => {
-  // worked through this Formik tutorial and each of its iterations 
+  // worked through this Formik tutorial and each of its iterations/ways of using it
   // useFormik() hook --> getFieldProps (not able to leverage) --> <Formik /> w/ render props
   // https://formik.org/docs/tutorial
   const navigate = useNavigate();
@@ -20,6 +20,13 @@ const PlayerForm = () => {
   return (
     <div className="max-w-full h-96 px-6 pb-6 pt-4 overflow-auto border-solid border-2 border-gray">
       <h1 className="text-lg md:text-2xl">Player Names</h1>
+      {/* <Formik> component calls useFormik() under-the-hood, which returns all Formik state and helpers */}
+      {/* <Formik> accepts a function as its children (aka a render prop) */}
+      {/* <Formik>'s argument is the exact same object returned by useFormik() */}
+      {/* https://formik.org/docs/tutorial#leveraging-react-context */}
+      
+      {/* using the "children" render method of <Formik> */}
+      {/* https://formik.org/docs/api/formik#formik-render-methods-and-props */}
       <Formik
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
@@ -29,9 +36,13 @@ const PlayerForm = () => {
          }, 400);
        }}
       >
+        {/* "formik" prop below could also be destructured into: {({ handleSubmit, handleChange, handleBlur, values, errors }) => ( <Form /> )} */}
+        {/* https://formik.org/docs/api/formik#children-reactreactnode--props-formikpropsvalues--reactnode */}
+        
+        {/* render prop */}
         {formik => (
           <Form>
-            {/* Field Array doesn't play nice with useFormik() hook, so have to wrap it in FormikProvider in order to pass Formik props to it */}
+            {/* <FieldArray> doesn't play nice with useFormik() hook, so have to wrap it in <FormikProvider> in order to pass necessary props to it ("formik") */}
             {/* https://stackoverflow.com/questions/59980094/can-i-use-fieldarray-alongside-useformik-hook */}
             <FormikProvider value={formik}>
               {/* https://formik.org/docs/examples/field-arrays */}
@@ -47,15 +58,13 @@ const PlayerForm = () => {
                           >
                             Name
                           </label>
-                          <input 
+                          {/* <Field> ultimately compiles to an HTML <input> */}
+                          {/* <Field> implicitly grabs the respective onChange, onBlur and value props and pass them to the element */}
+                          {/* https://formik.org/docs/tutorial#leveraging-react-context --> <Field> component */}
+                          <Field 
                             id={`players[${index}].name`}
                             type="text"
                             name={`players[${index}].name`}
-                            onChange={formik.handleChange}
-                            value={formik.values.players[index].name}
-                            // below does not work for this form (must explicity provide name, onChange and value props)
-                            // https://formik.org/docs/tutorial#reducing-boilerplate
-                            // {...formik.getFieldProps(formik.values.players[index].name)}
                             className="border-solid border-2 border-black px-1 my-2 w-40 md:w-auto"
                           />
                 
