@@ -30,7 +30,7 @@ const PlayerForm = () => {
        }}
       >
         {formik => (
-          <form onSubmit={formik.handleSubmit}>
+          <Form>
             {/* Field Array doesn't play nice with useFormik() hook, so have to wrap it in FormikProvider in order to pass Formik props to it */}
             {/* https://stackoverflow.com/questions/59980094/can-i-use-fieldarray-alongside-useformik-hook */}
             <FormikProvider value={formik}>
@@ -96,7 +96,7 @@ const PlayerForm = () => {
                 Next
               </button>          
             </div>
-          </form>
+          </Form>
         )}
       </Formik>
     </div>
