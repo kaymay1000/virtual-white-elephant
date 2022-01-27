@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 
-// type PlayerOrderPageProps = {
-//   aProp?: boolean;
-// }
+type PlayerOrderPageProps = {
+  players?: {};
+}
 
-// const PlayerOrderPage = ({
-//   aProp
-// }: PlayerOrderPageProps): JSX.Element => {
+const PlayerOrderPage = ({
+  players
+}: PlayerOrderPageProps): JSX.Element => {
 
-const PlayerOrderPage = (): JSX.Element => {
+  console.log('players blob in player order page: ', players)
 
   const navigate = useNavigate();
 

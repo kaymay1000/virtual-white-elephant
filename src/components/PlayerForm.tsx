@@ -1,4 +1,6 @@
-import { Formik, Form, Field, FieldArray, FormikHelpers, FormikProps, FormikProvider, useFormik } from 'formik';
+
+import { useState } from 'react';
+import { Formik, Form, Field, FieldArray, FormikProvider } from 'formik';
 import Icon from './Icon';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +14,8 @@ const PlayerForm = () => {
   // useFormik() hook --> getFieldProps (not able to leverage) --> <Formik /> w/ render props
   // https://formik.org/docs/tutorial
   const navigate = useNavigate();
+
+  const [playerFormValues, setPlayerFormValues] = useState({});
 
   const initialValues: PlayerFormValues = {
     players: [{name: ''}]
@@ -32,6 +36,7 @@ const PlayerForm = () => {
         onSubmit={(values, { setSubmitting }) => {
          setTimeout(() => {
            console.log('values: ', values);
+           setPlayerFormValues(values);
            setSubmitting(false);
          }, 400);
        }}
