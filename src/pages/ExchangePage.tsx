@@ -1,25 +1,15 @@
 import PlayerDropdown from '../components/PlayerDropdown';
 import ActiveGifts from '../components/ActiveGifts';
 import FrozenGifts from '../components/FrozenGifts';
-import { useNavigate } from 'react-router-dom';
-
-// type ExchangePageProps = {
-//   aProp?: boolean;
-// }
-
-// const ExchangePage = ({
-//   aProp
-// }: ExchangePageProps): JSX.Element => {
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 const ExchangePage = (): JSX.Element => {
-
+  
   const navigate = useNavigate();
-
-  const players = [
-    {id: 1, name: 'Beau'}, 
-    {id: 2, name: 'Winston'}, 
-    {id: 3, name: 'Greg'}
-  ];
+  const location = useLocation();
+  const playerFormData = location.state;
+  const [playerDropdownValues, setPlayerDropdownValues] = useState(playerFormData);
 
   return (
     <div className="w-full mx-auto max-h-screen overflow-auto">
@@ -47,7 +37,7 @@ const ExchangePage = (): JSX.Element => {
                   <input type="text" name="gift name" className="border-solid border-2 border-black px-1 my-2 w-44"/>
                 </div>
                 <div className="mx-auto md:mx-2">
-                  <PlayerDropdown players={players}></PlayerDropdown>
+                  <PlayerDropdown players={playerDropdownValues}/>
                 </div>
                 <div className="flex flex-col justify-end mx-2">
                   <button className="border-solid border-2 border-black px-2 my-2 rounded hover:bg-green-400 text-sm md:text-base">Add</button>

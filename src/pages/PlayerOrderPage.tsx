@@ -7,10 +7,33 @@ const PlayerOrderPage = (): JSX.Element => {
   // https://stackoverflow.com/questions/64566405/react-router-dom-v6-usenavigate-passing-value-to-another-component/64566486
   // https://v5.reactrouter.com/web/api/Hooks/uselocation
   const location = useLocation();
-  console.log('location object in player order page: ', location);
-  console.log('location.state: ', location.state);
-
+  const playerFormData = location.state.players;
   const navigate = useNavigate();
+
+  // Fisher-Yates shuffle
+  // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+  const shuffle = (arr: Array<{ name: string }>) => {
+    // comma syntax is called the js "single var pattern"
+    // https://www.webfx.com/blog/web-design/single-var-pattern/
+    
+    // below is equivalent to:
+    // let currentIndex = arr.length;
+    // let randomIndex;
+    let currentIndex = arr.length, randomIndex;
+
+    // while there are elements left to shuffle
+    while(currentIndex != 0) {
+      // pick a remaining element
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // then swap it with the current element
+      [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+    }
+    return arr;
+  }
+
+  let shuffledPlayers = shuffle(playerFormData);
 
   return (
     <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
@@ -23,15 +46,18 @@ const PlayerOrderPage = (): JSX.Element => {
         <h1 className="text-lg md:text-2xl">Player Order</h1>
         <div className="my-4">
           <ol className="list-decimal list-inside">
-            <li>Player One</li>
-            <li>Player Two</li>
-            <li>Player Three</li>
+            {shuffledPlayers.map((obj: { name: string }) => {
+              const playerName = obj.name;
+              return (
+                <li key={shuffledPlayers.indexOf(obj)}>{playerName}</li>
+              )
+            })}
           </ol>
         </div>
         
         <div className="flex justify-center md:justify-end mt-6">
           <button 
-            onClick={() => navigate('/exchange')}
+            onClick={() => navigate('/exchange', {state: shuffledPlayers})}
             className='border-solid border-2 border-black px-2 rounded hover:bg-green-400'
           >
             Start Exchange

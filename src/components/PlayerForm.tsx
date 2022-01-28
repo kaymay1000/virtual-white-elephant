@@ -101,10 +101,7 @@ const PlayerForm = (): JSX.Element => {
             <div className="flex justify-center md:justify-end mt-2">
               <button 
                 type="submit"
-                className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-400" 
-                // onClick={() => {
-                //   navigate('/player-order')
-                // }}
+                className="border-solid border-2 border-black px-2 rounded justify-end hover:bg-green-400"
               >
                 Next
               </button>          
