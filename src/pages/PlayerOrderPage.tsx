@@ -22,7 +22,7 @@ const PlayerOrderPage = (): JSX.Element => {
     let currentIndex = arr.length, randomIndex;
 
     // while there are elements left to shuffle
-    while(currentIndex != 0) {
+    while(currentIndex !== 0) {
       // pick a remaining element
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
