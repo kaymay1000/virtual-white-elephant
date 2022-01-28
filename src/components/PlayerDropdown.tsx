@@ -4,14 +4,14 @@ import Icon from './Icon';
 import { faChevronDown, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 type PlayerDropdownProps = {
-  players: Array<{id: number, name: string}>;
+  players: Array<{name: string}>;
 }
 
 const PlayerDropdown = ({
   players,
 }: PlayerDropdownProps): JSX.Element => {
 
-  const [selectedPlayer, setSelectedPlayer] = useState(players[0].name);
+  const [selectedPlayer, setSelectedPlayer] = useState();
 
   return (
     <>
@@ -27,7 +27,7 @@ const PlayerDropdown = ({
           <Listbox.Options>
             {players.map((player) => (
               <Listbox.Option
-                key={player.id}
+                key={players.indexOf(player)}
                 value={player.name}
                 className="text-sm md:text-base"
               >
