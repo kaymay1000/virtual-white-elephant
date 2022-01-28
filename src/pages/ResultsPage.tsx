@@ -31,7 +31,7 @@ const ResultsPage = (): JSX.Element => {
         <div className="flex justify-center md:justify-end mt-6">
           <button 
             onClick={() => navigate('/')}
-            className='border-solid border-2 border-black px-2 rounded hover:bg-green-400'
+            className='border-2 border-black px-2 rounded hover:bg-green-400'
           >
             Share
           </button>
