@@ -21,7 +21,7 @@ const HomePage = (): JSX.Element => {
       </div>
       
       <button 
-        className="border-solid border-2 border-black px-2 rounded hover:bg-green-400" 
+        className="border-2 border-black px-2 rounded hover:bg-green-400" 
         onClick={() => navigate('/setup')}
       >
         Start a Gift Exchange
