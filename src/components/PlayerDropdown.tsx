@@ -4,7 +4,7 @@ import Icon from './Icon';
 import { faChevronDown, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 type PlayerDropdownProps = {
-  players: Array<{id: number, name: string}>;
+  players: Array<{name: string}>;
 }
 
 const PlayerDropdown = ({

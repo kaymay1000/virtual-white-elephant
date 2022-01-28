@@ -35,6 +35,34 @@ const PlayerOrderPage = (): JSX.Element => {
 
   let shuffledPlayers = shuffle(playerFormData);
 
+  const alphabetizePlayers = (arr: Array<{ name: string }>) => {
+    // grab value of each player object's name prop and push into a temp array
+    let nameStringArray: string[] = [];
+    arr.map(obj => {
+      nameStringArray.push(obj.name);
+      return nameStringArray;
+    });
+    
+    // sort the temp array (default behavior is perfect for this use case)
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+    let alphabetizedStrings = nameStringArray.sort();
+
+    // turn alphabetized string array back into an array of objects for use on Exchange page
+    let alphabetizedObjects = alphabetizedStrings.map((name: string) => {
+      let obj = {name: name}
+      return obj
+    })
+
+    return alphabetizedObjects;
+  }
+
+  // call alphabetizeNames() with playerFormData (same data used in shuffle() for purposes of having a single source of truth)
+  let alphabetizedPlayerObjects = alphabetizePlayers(playerFormData);
+
+  // let alphaBackToObjArray = alphaBackToObj(alphabetizedNames);
+  // console.log('alphaBackToObjArray: ', alphaBackToObjArray);
+  
+
   return (
     <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
        <div>
@@ -57,7 +85,7 @@ const PlayerOrderPage = (): JSX.Element => {
         
         <div className="flex justify-center md:justify-end mt-6">
           <button 
-            onClick={() => navigate('/exchange', {state: shuffledPlayers})}
+            onClick={() => navigate('/exchange', {state: alphabetizedPlayerObjects})}
             className='border-solid border-2 border-black px-2 rounded hover:bg-green-400'
           >
             Start Exchange
