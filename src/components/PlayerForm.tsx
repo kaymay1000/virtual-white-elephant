@@ -1,22 +1,18 @@
 
-import { useState } from 'react';
 import { Formik, Form, Field, FieldArray, FormikProvider } from 'formik';
 import Icon from './Icon';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
-
 interface PlayerFormValues {
   players: Array<{ name: string }>
 }
 
-const PlayerForm = () => {
+const PlayerForm = (): JSX.Element => {
   // worked through this Formik tutorial and each of its iterations/ways of using it
   // useFormik() hook --> getFieldProps (not able to leverage) --> <Formik /> w/ render props
   // https://formik.org/docs/tutorial
+  
   const navigate = useNavigate();
-
-  const [playerFormValues, setPlayerFormValues] = useState({});
-
   const initialValues: PlayerFormValues = {
     players: [{name: ''}]
   }
@@ -35,9 +31,12 @@ const PlayerForm = () => {
         initialValues={initialValues}
         onSubmit={(values, { setSubmitting }) => {
          setTimeout(() => {
-           console.log('values: ', values);
-           setPlayerFormValues(values);
            setSubmitting(false);
+          // can pass data to whichever component is rendered at the route navigate is told to go to
+          // https://github.com/remix-run/react-router/blob/f59ee5488bc343cf3c957b7e0cc395ef5eb572d2/packages/react-router-dom/index.js#L173
+          // https://reacttraining.com/blog/react-router-v6-pre/#suspense-ready-navigation
+          // https://stackoverflow.com/questions/64566405/react-router-dom-v6-usenavigate-passing-value-to-another-component/64566486
+           navigate('/player-order', {state: values});
          }, 400);
        }}
       >

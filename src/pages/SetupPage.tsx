@@ -1,14 +1,6 @@
 import PlayerForm from '../components/PlayerForm';
 
-// type SetupPageProps = {
-//   aProp?: boolean;
-// }
-
-// const SetupPage = ({
-//   aProp
-// }: SetupPageProps): JSX.Element => {
-
-const SetupPage = () => {
+const SetupPage = (): JSX.Element => {
 
   return (
     <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">

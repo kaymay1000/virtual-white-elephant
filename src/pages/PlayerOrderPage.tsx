@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-type PlayerOrderPageProps = {
-  players?: {};
-}
+const PlayerOrderPage = (): JSX.Element => {
 
-const PlayerOrderPage = ({
-  players
-}: PlayerOrderPageProps): JSX.Element => {
-
-  console.log('players blob in player order page: ', players)
+  // state passed to a route must be accessed using useLocation()
+  // location.state contains form data passed to PlayerOrderPage by useNavigate() in PlayerForm
+  // https://stackoverflow.com/questions/64566405/react-router-dom-v6-usenavigate-passing-value-to-another-component/64566486
+  // https://v5.reactrouter.com/web/api/Hooks/uselocation
+  const location = useLocation();
+  console.log('location object in player order page: ', location);
+  console.log('location.state: ', location.state);
 
   const navigate = useNavigate();
 
