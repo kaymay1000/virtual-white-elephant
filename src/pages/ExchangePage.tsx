@@ -23,7 +23,7 @@ const ExchangePage = (): JSX.Element => {
         
         <div className="flex flex-col md:flex-row">
 
-          <div className="border-2 border-gray p-1 md:p-2 md:w-1/2 md:mx-2">
+          <div className="border-2 border-gray p-2 md:p-2 md:w-1/2 md:mx-2">
             <div className="flex flex-col">
               <h1 className="font-bold text-sm md:text-base">Add New Gift</h1>
               <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
@@ -46,7 +46,7 @@ const ExchangePage = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
+          <div className="border-2 border-gray p-2 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Unopened Gifts Remaining</h1>
             <p className="text-sm md:text-base">This is where the unopened gift count will go</p>
           </div>
@@ -54,25 +54,29 @@ const ExchangePage = (): JSX.Element => {
         
 
         <div className="flex flex-col md:flex-row mt-6">
-          <div className="border-2 border-gray p-1 md:p-2 md:w-1/2 md:mx-2">
-            <h1 className="font-bold text-sm md:text-base">Current Opener</h1>
-            <p className="text-sm md:text-base">Someone's Name</p>
-            <button className="border-2 border-black px-2 rounded hover:bg-green-400 text-sm md:text-base">Advance to Next Opener</button>
+          <div className="border-2 border-gray p-2 md:p-2 md:w-1/2 md:mx-2">
+            <h1 className="font-bold text-sm md:text-base md:mb-2">Current Opener</h1>
+            <div className="flex flex-col md:flex-row justify-around items-center">
+              <p className="text-sm md:text-base">Someone's Name</p>
+              <button className="border-2 border-black px-2 rounded hover:bg-green-400 text-sm md:text-base">Advance to Next Opener</button>
+            </div>
+
+            
           </div>
           
-          <div className="border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
+          <div className="border-2 border-gray p-2 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Next Opener</h1>
             <p className="text-sm md:text-base">Someone Else's Name</p>
           </div>
         </div>
         
         <div className="flex flex-col md:flex-row mt-6">
-          <div className="border-2 border-gray p-1 md:p-2 md:w-1/2 md:mx-2">
+          <div className="border-2 border-gray p-2 md:p-2 md:w-1/2 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
             <ActiveGifts/>
           </div>
           
-          <div className="border-2 border-gray p-1 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
+          <div className="border-2 border-gray p-2 md:p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
             <h1 className="font-bold text-sm md:text-base">Frozen Gifts</h1>
             <FrozenGifts/>
           </div>
