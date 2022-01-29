@@ -19,13 +19,13 @@ const ExchangePage = (): JSX.Element => {
         <h1 className="text-2xl font-bold">Exchange</h1>
         {/* TODO: eventually want to render the name of the Host here */}
         <p>Host, this is your time to shine!</p>
-        <p className="pb-4 md:pb-6">Log each gift as it's opened, as well as any time a gift is stolen.</p>
+        <p className="pb-6">Log each gift as it's opened, as well as any time a gift is stolen.</p>
       </div>
 
       {/* Main wrapper */}
       <div className="w-full h-full p-6 overflow-auto border-2 border-gray">
         {/* Actions wrapper */}
-        <div className="border-2 border-green-400 border-dashed py-6 px-4">
+        <div className="border-2 border-green-400 border-dashed px-6 pt-1 pb-6 md:pt-2 md:pb-6 md:px-4">
           <h1 className="text-xl font-bold mb-1">Actions</h1>
           {/* Actions sub component wrapper */}
           <div className="flex flex-col md:flex-row">
@@ -71,14 +71,14 @@ const ExchangePage = (): JSX.Element => {
               </div>
             </div>
             {/* Actions sub component */}
-            <div className="flex items-center md:mx-2">
-              <button className="border-2 border-black px-2 h-1/2 rounded hover:bg-green-400 text-sm md:text-base">Advance to Next Opener</button>
+            <div className="flex justify-center mt-6 md:mx-2 md:items-center md:mt-0">
+              <button className="border-2 border-black px-2 h-1/2 rounded hover:bg-green-400 text-sm md:text-base md:h-1/3 xl:h-1/2">Advance to Next Opener</button>
             </div>
           </div>
         </div>
       
         {/* Info wrapper */}
-        <div className="border-2 border-green-400 border-dashed py-6 px-4 mt-6">
+        <div className="border-2 border-green-400 border-dashed mt-6 px-6 pt-1 pb-6 md:pt-2 md:pb-6 md:px-4">
           <h1 className="text-xl font-bold mb-1">Info</h1>
           {/* Info sub component wrapper */}
           <div className="border-2 border-gray p-2 mx-auto md:w-1/2">
