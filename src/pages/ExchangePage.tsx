@@ -2,7 +2,7 @@ import Select from '../components/Select';
 import ActiveGifts from '../components/ActiveGifts';
 import FrozenGifts from '../components/FrozenGifts';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState, useRef, createRef, useEffect } from 'react';
 
 const ExchangePage = (): JSX.Element => {
   
@@ -10,9 +10,20 @@ const ExchangePage = (): JSX.Element => {
   const location = useLocation();
   const playerFormData = location.state;
   const numPlayers = playerFormData.length;
-  const [playerSelectValues, setPlayerSelectValues] = useState(playerFormData);
-  const [giftSelectValues, setGiftSelectValues] = useState(playerFormData);
+  const [players, setPlayers] = useState(playerFormData);
+  const [gifts, setGifts] = useState<Array<string>>([]);
+  const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
+
+  const handleInputUpdate = (event: React.FormEvent<HTMLInputElement>) => {
+    let typedTarget = event.target as HTMLInputElement;
+    setNewGiftInput(typedTarget.value);
+  }
+
+  const handleAdd = () => {
+    const newGiftsArray = [...gifts, newGiftInput];
+    setGifts(newGiftsArray);
+  }
 
   return (
     <div className="w-full mx-auto max-h-screen overflow-auto">
@@ -37,15 +48,25 @@ const ExchangePage = (): JSX.Element => {
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
                     <label 
-                      htmlFor='gift name'
+                      htmlFor='new gift name'
                       className="flex justify-center text-sm md:text-base"
                     >
                       Gift Name
                     </label>
-                    <input type="text" name="gift name" className="border-2 border-black px-1 my-2 w-36 md:w-44"/>
+                    <input 
+                      type="text" 
+                      name="new gift name" 
+                      value={newGiftInput}
+                      onChange={handleInputUpdate}
+                      className="border-2 border-black px-1 my-2 w-36 md:w-44"/>
                   </div>
                   <div className="flex flex-col justify-end mx-2">
-                    <button className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base">Add</button>
+                    <button 
+                      className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base"
+                      onClick={handleAdd}
+                    >
+                      Add
+                    </button>
                   </div>
                 </div>
               </div>
@@ -56,11 +77,11 @@ const ExchangePage = (): JSX.Element => {
                 <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
-                    <Select options={playerSelectValues} label='Player'/>
+                    <Select options={players} label='Player'/>
                   </div>
                   <div className="mx-auto md:mx-2">
                     {/* will eventually be active gifts instead of SelectValues */}
-                    <Select options={giftSelectValues} label='Gift'/>
+                    <Select stringOptions={gifts} label='Gift'/>
                   </div>
                   <div className="flex flex-col justify-end mx-2">
                     <button className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base">Update</button>
