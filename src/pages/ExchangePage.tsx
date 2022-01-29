@@ -1,4 +1,4 @@
-import PlayerSelect from '../components/Select';
+import Select from '../components/Select';
 import ActiveGifts from '../components/ActiveGifts';
 import FrozenGifts from '../components/FrozenGifts';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -16,7 +16,6 @@ const ExchangePage = (): JSX.Element => {
   const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
   // const [disableAddButton, setDisableAddButton] = useState(true);
-  // const [currentSelectValue, setCurrentSelectValue] = useState('');
   const [currentPlayerSelectValue, setCurrentPlayerSelectValue] = useState('');
   const [currentGiftSelectValue, setCurrentGiftSelectValue] = useState('');
 
@@ -97,15 +96,6 @@ const ExchangePage = (): JSX.Element => {
     setCurrentGiftSelectValue(currentGiftSelectValue);
   }
 
-  // const getSelectedGift = (gift: string) => {
-  //   console.log('gift from Select component: ', gift);
-  //   setSelectedGiftInUpdate(gift);
-  // }
-
-  // const myCallback = (player: any) => {
-  //   console.log('player from Select component: ', player);
-  // }
-
   return (
     <div className="w-full mx-auto max-h-screen overflow-auto">
       <div>
@@ -160,15 +150,11 @@ const ExchangePage = (): JSX.Element => {
                 <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
-                    {/* <Select playerArray={players} label='Player' getSelectedPlayer={myCallback}/> */}
-                    {/* <Select playerArray={players} label='Player'/> */}
-                    <PlayerSelect valueArray={players} label='Player' value={currentPlayerSelectValue} onPlayerValueChange={handlePlayerChange}/>
+                    <Select valueArray={players} label='Player' value={currentPlayerSelectValue} onValueChange={handlePlayerChange}/>
                   </div>
                   <div className="mx-auto md:mx-2">
                     {/* will eventually be active gifts instead of SelectValues */}
-                    {/* <Select giftArray={gifts} label='Gift' getSelectedGift={getSelectedGift}/> */}
-                    {/* <Select giftArray={gifts} label='Gift'/> */}
-                    <PlayerSelect valueArray={gifts} label='Gift' value={currentGiftSelectValue} onPlayerValueChange={handleGiftChange}/>
+                    <Select valueArray={gifts} label='Gift' value={currentGiftSelectValue} onValueChange={handleGiftChange}/>
                     {/* TODO: think through how to prevent gift select from being clicked if no gifts have been added yet */}
                     {/* <Select giftArray={gifts} label='Gift' hasGifts={hasGifts}/> */}
                   </div>
