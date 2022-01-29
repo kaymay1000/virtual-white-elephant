@@ -25,7 +25,7 @@ const ExchangePage = (): JSX.Element => {
       {/* Main wrapper */}
       <div className="w-full h-full p-6 overflow-auto border-2 border-gray">
         {/* Actions wrapper */}
-        <div className="border-2 border-green-400 border-dashed px-6 pt-1 pb-6 md:pt-2 md:pb-6 md:px-4">
+        <div className="border-2 border-dashed border-green-400 px-6 pt-1 pb-6 md:pt-2 md:pb-6 md:px-4">
           <h1 className="text-xl font-bold mb-1">Actions</h1>
           {/* Actions sub component wrapper */}
           <div className="flex flex-col md:flex-row">
@@ -43,11 +43,8 @@ const ExchangePage = (): JSX.Element => {
                     </label>
                     <input type="text" name="gift name" className="border-2 border-black px-1 my-2 w-36 md:w-44"/>
                   </div>
-                  <div className="mx-auto md:mx-2">
-                    <PlayerDropdown players={playerDropdownValues}/>
-                  </div>
                   <div className="flex flex-col justify-end mx-2">
-                    <button className="border-2 border-black px-2 my-2 rounded hover:bg-green-400 text-sm md:text-base">Add</button>
+                    <button className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base">Add</button>
                   </div>
                 </div>
               </div>
@@ -55,24 +52,24 @@ const ExchangePage = (): JSX.Element => {
             {/* Actions sub component */}
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <div className="flex flex-col">
-                <h1 className="font-bold text-sm md:text-base">Log a Steal</h1>
+                <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
+                  <div className="mx-auto md:mx-2">
+                    <PlayerDropdown players={playerDropdownValues}/>
+                  </div>
                   <div className="mx-auto md:mx-2">
                     {/* will eventually be active gifts instead of playerDropdownValues */}
                     <PlayerDropdown players={playerDropdownValues}/>
                   </div>
-                  <div className="mx-auto md:mx-2">
-                    <PlayerDropdown players={playerDropdownValues}/>
-                  </div>
                   <div className="flex flex-col justify-end mx-2">
-                    <button className="border-2 border-black px-2 my-2 rounded hover:bg-green-400 text-sm md:text-base">Add</button>
+                    <button className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base">Update</button>
                   </div>
                 </div>
               </div>
             </div>
             {/* Actions sub component */}
             <div className="flex justify-center mt-6 md:mx-2 md:items-center md:mt-0">
-              <button className="border-2 border-black px-2 h-1/2 rounded hover:bg-green-400 text-sm md:text-base md:h-1/3 xl:h-1/2">Advance to Next Opener</button>
+              <button className="border-2 border-black px-2 h-1/2 text-sm rounded hover:bg-green-400 md:text-base md:h-1/3 xl:h-1/2">Advance to Next Opener</button>
             </div>
           </div>
         </div>

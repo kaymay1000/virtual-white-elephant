@@ -22,14 +22,13 @@ const PlayerDropdown = ({
             <Listbox.Button className="pl-28">
               <Icon iconName={faChevronDown}></Icon>
             </Listbox.Button>
-            
           </div>
           <Listbox.Options className="max-h-16 md:max-h-20 w-full overflow-auto border-black border-2">
             {players.map((player) => (
               <Listbox.Option
                 key={players.indexOf(player)}
                 value={player.name}
-                className="text-sm md:text-base px-2 hover:bg-green-400 hover:text-green-100"
+                className="text-sm md:text-base px-2 hover:bg-green-400"
               >
                 {/* active and selected are Render Props provided by HeadlessUI */}
                 {/* https://headlessui.dev/react/listbox#styling-the-active-and-selected-option */}
