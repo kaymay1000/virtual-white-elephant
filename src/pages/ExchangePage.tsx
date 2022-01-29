@@ -16,13 +16,14 @@ const ExchangePage = (): JSX.Element => {
   const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
   // const [disableAddButton, setDisableAddButton] = useState(true);
+  const [currentSelectValue, setCurrentSelectValue] = useState('');
 
   const handleInputUpdate = (event: React.FormEvent<HTMLInputElement>) => {
     let typedTarget = event.target as HTMLInputElement;
     setNewGiftInput(typedTarget.value);
   }
 
-  const handleAdd = () => {
+  const handleAddGift = () => {
     // TODO: think through this logic a bit
     // console.log('disableAddButton coming into handleAdd: ', disableAddButton);
     // let checkDisableAdd = disableAdd();
@@ -77,6 +78,32 @@ const ExchangePage = (): JSX.Element => {
   //   return disableAddButton;
   // }
 
+  const handleUpdateGift = () => {
+    console.log('hitting here');
+    console.log('current select value state: ', currentSelectValue);
+  }
+
+  const handlePlayerChange = (currentSelectValue: string) => {
+    console.log('hitting handlePlayerChange')
+    console.log('currentSelectValue in handlePlayerChange: ', currentSelectValue);
+    setCurrentSelectValue(currentSelectValue);
+  }
+
+  const handleGiftChange = (currentSelectValue: string) => {
+    console.log('hitting handleGiftChange')
+    console.log('currentSelectValue in handleGiftChange: ', currentSelectValue);
+    setCurrentSelectValue(currentSelectValue);
+  }
+
+  // const getSelectedGift = (gift: string) => {
+  //   console.log('gift from Select component: ', gift);
+  //   setSelectedGiftInUpdate(gift);
+  // }
+
+  // const myCallback = (player: any) => {
+  //   console.log('player from Select component: ', player);
+  // }
+
   return (
     <div className="w-full mx-auto max-h-screen overflow-auto">
       <div>
@@ -115,7 +142,7 @@ const ExchangePage = (): JSX.Element => {
                   <div className="flex flex-col justify-end mx-2">
                     <button 
                       className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base"
-                      onClick={handleAdd}
+                      onClick={handleAddGift}
                       disabled={(newGiftInput === '' ? true : false)}
                       // disabled={disableAddButton}
                     >
@@ -131,16 +158,25 @@ const ExchangePage = (): JSX.Element => {
                 <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
-                    <Select playerArray={players} label='Player'/>
+                    {/* <Select playerArray={players} label='Player' getSelectedPlayer={myCallback}/> */}
+                    {/* <Select playerArray={players} label='Player'/> */}
+                    <Select valueArray={players} label='Player' value={currentSelectValue} onValueChange={handlePlayerChange}/>
                   </div>
                   <div className="mx-auto md:mx-2">
                     {/* will eventually be active gifts instead of SelectValues */}
-                    <Select giftArray={gifts} label='Gift'/>
+                    {/* <Select giftArray={gifts} label='Gift' getSelectedGift={getSelectedGift}/> */}
+                    {/* <Select giftArray={gifts} label='Gift'/> */}
+                    <Select valueArray={gifts} label='Gift' value={currentSelectValue} onValueChange={handleGiftChange}/>
                     {/* TODO: think through how to prevent gift select from being clicked if no gifts have been added yet */}
                     {/* <Select giftArray={gifts} label='Gift' hasGifts={hasGifts}/> */}
                   </div>
                   <div className="flex flex-col justify-end mx-2">
-                    <button className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base">Update</button>
+                    <button 
+                      className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base"
+                      onClick={handleUpdateGift}
+                    >
+                      Update
+                    </button>
                   </div>
                 </div>
               </div>
