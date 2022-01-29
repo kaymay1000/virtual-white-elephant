@@ -4,18 +4,22 @@ import Icon from './Icon';
 import { faChevronDown, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 type SelectProps = {
-  options?: Array<{name: string}>;
-  stringOptions?: string[];
+  playerArray?: Array<{name: string}>;
+  giftArray?: string[];
   label: string;
+  // hasGifts?: boolean;
 }
 
 const Select = ({
-  options,
-  stringOptions,
-  label
+  playerArray,
+  giftArray,
+  label,
+  // hasGifts
 }: SelectProps): JSX.Element => {
 
   const [selectedOption, setSelectedOption] = useState();
+  // console.log('hasGifts in Select', hasGifts);
+  // console.log('!hasGifts in Select', !hasGifts);
 
   return (
     <>
@@ -23,14 +27,17 @@ const Select = ({
         <Listbox.Label className="text-sm md:text-base">{label}</Listbox.Label>
           <div className="flex justify-between items-center border-2 border-black px-2 my-2 w-36 md:w-44">
             <p className="text-sm md:text-base">{selectedOption}</p>
-            <Listbox.Button className="pl-28">
+            <Listbox.Button 
+              className="pl-28"
+              // disabled={!hasGifts}
+            >
               <Icon iconName={faChevronDown}></Icon>
             </Listbox.Button>
           </div>
           <Listbox.Options className="max-h-16 md:max-h-20 w-full overflow-auto border-black border-2">
-            {options?.map((option) => (
+            {playerArray?.map((option) => (
               <Listbox.Option
-                key={options.indexOf(option)}
+                key={playerArray.indexOf(option)}
                 value={option.name}
                 className="text-sm md:text-base px-2 hover:bg-green-400"
               >
@@ -45,9 +52,9 @@ const Select = ({
               </Listbox.Option>
             ))}
 
-            {stringOptions?.map((option) => (
+            {giftArray?.map((option) => (
               <Listbox.Option
-                key={stringOptions.indexOf(option)}
+                key={giftArray.indexOf(option)}
                 value={option}
                 className="text-sm md:text-base px-2 hover:bg-green-400"
               >
@@ -64,7 +71,6 @@ const Select = ({
           </Listbox.Options>
       </Listbox>
     </>
-    
   )
 }
 

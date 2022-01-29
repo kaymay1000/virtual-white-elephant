@@ -12,6 +12,7 @@ const ExchangePage = (): JSX.Element => {
   const numPlayers = playerFormData.length;
   const [players, setPlayers] = useState(playerFormData);
   const [gifts, setGifts] = useState<Array<string>>([]);
+  const [hasGifts, setHasGifts] = useState(false);
   const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
 
@@ -20,10 +21,12 @@ const ExchangePage = (): JSX.Element => {
     setNewGiftInput(typedTarget.value);
   }
 
+  console.log('hasGifts: ', hasGifts);
   const handleAdd = () => {
     const newGiftsArray = [...gifts, newGiftInput];
     setGifts(newGiftsArray);
     setUnopenedGiftsRemaining(unopenedGiftsRemaining - 1);
+    // setHasGifts(true);
   }
 
   return (
@@ -79,11 +82,13 @@ const ExchangePage = (): JSX.Element => {
                 <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
-                    <Select options={players} label='Player'/>
+                    <Select playerArray={players} label='Player'/>
                   </div>
                   <div className="mx-auto md:mx-2">
                     {/* will eventually be active gifts instead of SelectValues */}
-                    <Select stringOptions={gifts} label='Gift'/>
+                    <Select giftArray={gifts} label='Gift'/>
+                    {/* TODO: think through how to prevent gift select from being clicked if no gifts have been added yet */}
+                    {/* <Select giftArray={gifts} label='Gift' hasGifts={hasGifts}/> */}
                   </div>
                   <div className="flex flex-col justify-end mx-2">
                     <button className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base">Update</button>
