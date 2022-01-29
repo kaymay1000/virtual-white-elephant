@@ -80,19 +80,16 @@ const ExchangePage = (): JSX.Element => {
   // }
 
   const handleUpdateGift = () => {
-    console.log('hitting here');
-    // console.log('current select value state: ', currentSelectValue);
+    let playerToUpdate = players.filter((player: {name: string}) => player.name === currentPlayerSelectValue);
+    // since filter returns an array, have to access the player object at playerToUpdate[0]
+    playerToUpdate[0].currentGift = currentGiftSelectValue;
   }
 
   const handlePlayerChange = (currentPlayerSelectValue: string) => {
-    console.log('hitting handlePlayerChange')
-    console.log('currentPlayerSelectValue in handlePlayerChange: ', currentPlayerSelectValue);
     setCurrentPlayerSelectValue(currentPlayerSelectValue);
   }
 
   const handleGiftChange = (currentGiftSelectValue: string) => {
-    console.log('hitting handleGiftChange')
-    console.log('currentSelectValue in handleGiftChange: ', currentGiftSelectValue);
     setCurrentGiftSelectValue(currentGiftSelectValue);
   }
 
@@ -201,7 +198,7 @@ const ExchangePage = (): JSX.Element => {
           <div className="flex flex-col md:flex-row md:mt-6">
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
-              <ActiveGifts allGifts={gifts}/>
+              <ActiveGifts gifts={gifts} players={players} giftToUpdateWith={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/>
             </div>
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mt-0 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Frozen Gifts</h1>
