@@ -1,4 +1,4 @@
-import PlayerDropdown from '../components/PlayerDropdown';
+import Select from '../components/Select';
 import ActiveGifts from '../components/ActiveGifts';
 import FrozenGifts from '../components/FrozenGifts';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -10,7 +10,8 @@ const ExchangePage = (): JSX.Element => {
   const location = useLocation();
   const playerFormData = location.state;
   const numPlayers = playerFormData.length;
-  const [playerDropdownValues, setPlayerDropdownValues] = useState(playerFormData);
+  const [playerSelectValues, setPlayerSelectValues] = useState(playerFormData);
+  const [giftSelectValues, setGiftSelectValues] = useState(playerFormData);
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
 
   return (
@@ -55,11 +56,11 @@ const ExchangePage = (): JSX.Element => {
                 <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
-                    <PlayerDropdown players={playerDropdownValues}/>
+                    <Select options={playerSelectValues} label='Player'/>
                   </div>
                   <div className="mx-auto md:mx-2">
-                    {/* will eventually be active gifts instead of playerDropdownValues */}
-                    <PlayerDropdown players={playerDropdownValues}/>
+                    {/* will eventually be active gifts instead of SelectValues */}
+                    <Select options={giftSelectValues} label='Gift'/>
                   </div>
                   <div className="flex flex-col justify-end mx-2">
                     <button className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base">Update</button>
