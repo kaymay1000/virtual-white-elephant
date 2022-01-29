@@ -1,4 +1,4 @@
-import Select from '../components/Select';
+import PlayerSelect from '../components/Select';
 import ActiveGifts from '../components/ActiveGifts';
 import FrozenGifts from '../components/FrozenGifts';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -16,7 +16,9 @@ const ExchangePage = (): JSX.Element => {
   const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
   // const [disableAddButton, setDisableAddButton] = useState(true);
-  const [currentSelectValue, setCurrentSelectValue] = useState('');
+  // const [currentSelectValue, setCurrentSelectValue] = useState('');
+  const [currentPlayerSelectValue, setCurrentPlayerSelectValue] = useState('');
+  const [currentGiftSelectValue, setCurrentGiftSelectValue] = useState('');
 
   const handleInputUpdate = (event: React.FormEvent<HTMLInputElement>) => {
     let typedTarget = event.target as HTMLInputElement;
@@ -80,19 +82,19 @@ const ExchangePage = (): JSX.Element => {
 
   const handleUpdateGift = () => {
     console.log('hitting here');
-    console.log('current select value state: ', currentSelectValue);
+    // console.log('current select value state: ', currentSelectValue);
   }
 
-  const handlePlayerChange = (currentSelectValue: string) => {
+  const handlePlayerChange = (currentPlayerSelectValue: string) => {
     console.log('hitting handlePlayerChange')
-    console.log('currentSelectValue in handlePlayerChange: ', currentSelectValue);
-    setCurrentSelectValue(currentSelectValue);
+    console.log('currentPlayerSelectValue in handlePlayerChange: ', currentPlayerSelectValue);
+    setCurrentPlayerSelectValue(currentPlayerSelectValue);
   }
 
-  const handleGiftChange = (currentSelectValue: string) => {
+  const handleGiftChange = (currentGiftSelectValue: string) => {
     console.log('hitting handleGiftChange')
-    console.log('currentSelectValue in handleGiftChange: ', currentSelectValue);
-    setCurrentSelectValue(currentSelectValue);
+    console.log('currentSelectValue in handleGiftChange: ', currentGiftSelectValue);
+    setCurrentGiftSelectValue(currentGiftSelectValue);
   }
 
   // const getSelectedGift = (gift: string) => {
@@ -160,13 +162,13 @@ const ExchangePage = (): JSX.Element => {
                   <div className="mx-auto md:mx-2">
                     {/* <Select playerArray={players} label='Player' getSelectedPlayer={myCallback}/> */}
                     {/* <Select playerArray={players} label='Player'/> */}
-                    <Select valueArray={players} label='Player' value={currentSelectValue} onValueChange={handlePlayerChange}/>
+                    <PlayerSelect valueArray={players} label='Player' value={currentPlayerSelectValue} onPlayerValueChange={handlePlayerChange}/>
                   </div>
                   <div className="mx-auto md:mx-2">
                     {/* will eventually be active gifts instead of SelectValues */}
                     {/* <Select giftArray={gifts} label='Gift' getSelectedGift={getSelectedGift}/> */}
                     {/* <Select giftArray={gifts} label='Gift'/> */}
-                    <Select valueArray={gifts} label='Gift' value={currentSelectValue} onValueChange={handleGiftChange}/>
+                    <PlayerSelect valueArray={gifts} label='Gift' value={currentGiftSelectValue} onPlayerValueChange={handleGiftChange}/>
                     {/* TODO: think through how to prevent gift select from being clicked if no gifts have been added yet */}
                     {/* <Select giftArray={gifts} label='Gift' hasGifts={hasGifts}/> */}
                   </div>
