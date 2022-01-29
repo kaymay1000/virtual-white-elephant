@@ -1,19 +1,15 @@
-// type ActiveGiftsProps = {
-//   aProp?: boolean;
-// }
+type ActiveGiftsProps = {
+  allGifts: Array<{name: string}>;
+}
 
-// const ActiveGifts = ({
-//   aProp,
-// }: ActiveGiftsProps): JSX.Element => {
-
-const ActiveGifts = (): JSX.Element => {
+const ActiveGifts = ({
+  allGifts,
+}: ActiveGiftsProps): JSX.Element => {
 
   return (
     <div className="text-sm md:text-base">
       <ol>
-        <li>This is where an active gift will go</li>
-        <li>This is where an active gift will go</li>
-        <li>This is where an active gift will go</li>
+         {allGifts.map(gift => { return <li key={gift.name}>{gift.name}</li> })}
       </ol>
     </div>
   )

@@ -11,23 +11,71 @@ const ExchangePage = (): JSX.Element => {
   const playerFormData = location.state;
   const numPlayers = playerFormData.length;
   const [players, setPlayers] = useState(playerFormData);
-  const [gifts, setGifts] = useState<Array<string>>([]);
-  const [hasGifts, setHasGifts] = useState(false);
+  const [gifts, setGifts] = useState<Array<{ name: string }>>([]);
+  // const [hasGifts, setHasGifts] = useState(false);
   const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
+  // const [disableAddButton, setDisableAddButton] = useState(true);
 
   const handleInputUpdate = (event: React.FormEvent<HTMLInputElement>) => {
     let typedTarget = event.target as HTMLInputElement;
     setNewGiftInput(typedTarget.value);
   }
 
-  console.log('hasGifts: ', hasGifts);
   const handleAdd = () => {
-    const newGiftsArray = [...gifts, newGiftInput];
+    // TODO: think through this logic a bit
+    // console.log('disableAddButton coming into handleAdd: ', disableAddButton);
+    // let checkDisableAdd = disableAdd();
+    // console.log('checkDisableAdd: ', checkDisableAdd);
+    // if(checkDisableAdd === true) {
+    //   return
+    // } else {
+    //   const newGiftsArray = [...gifts, {name: newGiftInput}];
+    //   setGifts(newGiftsArray);
+    //   setUnopenedGiftsRemaining(unopenedGiftsRemaining - 1);
+    //   // setHasGifts(true);
+    // }
+    
+    const newGiftsArray = [...gifts, {name: newGiftInput}];
     setGifts(newGiftsArray);
     setUnopenedGiftsRemaining(unopenedGiftsRemaining - 1);
     // setHasGifts(true);
   }
+
+  // TODO: ditto from handleAdd
+  // const disableAdd = () => {
+  //   let emptyInput;
+  //   emptyInput = newGiftInput === '' ? true : false;
+  //   console.log('emptyInput: ', emptyInput);
+    
+  //   let noGiftsLeft;
+  //   noGiftsLeft = unopenedGiftsRemaining === 0 ? true : false;
+  //   console.log('noGiftsLeft: ', noGiftsLeft);
+
+  //   // if(emptyInput || noGiftsLeft) {
+  //   //   setDisableAddButton(true);
+  //   // } else {
+  //   //   setDisableAddButton(false);
+  //   // }
+
+  //   if(emptyInput) {
+  //     setDisableAddButton(true);
+  //   } else {
+  //     setDisableAddButton(false);
+  //   }
+    
+  //   if(noGiftsLeft) {
+  //     setDisableAddButton(true);
+  //   } else {
+  //     setDisableAddButton(false);
+  //   }
+
+  //   // emptyInput ? setDisableAddButton(true) : setDisableAddButton(false);
+  //   // noGiftsLeft ? setDisableAddButton(true) : setDisableAddButton(false);
+    
+  //   console.log('disableAddButton final: ', disableAddButton);
+  //   return disableAddButton;
+  // }
 
   return (
     <div className="w-full mx-auto max-h-screen overflow-auto">
@@ -68,7 +116,8 @@ const ExchangePage = (): JSX.Element => {
                     <button 
                       className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base"
                       onClick={handleAdd}
-                      disabled={newGiftInput === '' ? true : false}
+                      disabled={(newGiftInput === '' ? true : false)}
+                      // disabled={disableAddButton}
                     >
                       Add
                     </button>
@@ -128,7 +177,7 @@ const ExchangePage = (): JSX.Element => {
           <div className="flex flex-col md:flex-row md:mt-6">
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
-              <ActiveGifts/>
+              <ActiveGifts allGifts={gifts}/>
             </div>
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mt-0 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Frozen Gifts</h1>

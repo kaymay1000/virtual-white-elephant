@@ -5,7 +5,7 @@ import { faChevronDown, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 
 type SelectProps = {
   playerArray?: Array<{name: string}>;
-  giftArray?: string[];
+  giftArray?: Array<{name: string}>;
   label: string;
   // hasGifts?: boolean;
 }
@@ -55,14 +55,14 @@ const Select = ({
             {giftArray?.map((option) => (
               <Listbox.Option
                 key={giftArray.indexOf(option)}
-                value={option}
+                value={option.name}
                 className="text-sm md:text-base px-2 hover:bg-green-400"
               >
                 {/* active and selected are Render Props provided by HeadlessUI */}
                 {/* https://headlessui.dev/react/listbox#styling-the-active-and-selected-option */}
                 {({ active, selected }) => (
                   <div className={`flex justify-between ${active ? 'font-bold' : 'font-normal'}`}>
-                    <p className="text-sm md:text-base">{option}</p>
+                    <p className="text-sm md:text-base">{option.name}</p>
                     <div>{selected && <Icon iconName={faCheckCircle}></Icon>}</div>
                   </div>
                 )}
