@@ -24,7 +24,7 @@ const PlayerDropdown = ({
             </Listbox.Button>
             
           </div>
-          <Listbox.Options className="max-h-16 w-full overflow-auto border-black border-2">
+          <Listbox.Options className="max-h-16 md:max-h-20 w-full overflow-auto border-black border-2">
             {players.map((player) => (
               <Listbox.Option
                 key={players.indexOf(player)}
