@@ -41,7 +41,7 @@ const ExchangePage = (): JSX.Element => {
                     >
                       Gift Name
                     </label>
-                    <input type="text" name="gift name" className="border-2 border-black px-1 my-2 w-44"/>
+                    <input type="text" name="gift name" className="border-2 border-black px-1 my-2 w-36 md:w-44"/>
                   </div>
                   <div className="mx-auto md:mx-2">
                     <PlayerDropdown players={playerDropdownValues}/>
@@ -53,7 +53,7 @@ const ExchangePage = (): JSX.Element => {
               </div>
             </div>
             {/* Actions sub component */}
-            <div className="border-2 border-gray p-2 md:w-1/2 md:mx-2">
+            <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <div className="flex flex-col">
                 <h1 className="font-bold text-sm md:text-base">Log a Steal</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
@@ -87,24 +87,24 @@ const ExchangePage = (): JSX.Element => {
           </div>
 
           {/* Info sub component wrapper */}
-          <div className="flex flex-col md:flex-row mt-6">
-            <div className="border-2 border-gray p-2 md:w-1/2 md:mx-2">
+          <div className="flex flex-col md:flex-row md:mt-6">
+            <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <h1 className="font-bold text-sm md:text-base md:mb-2">Current Opener</h1>
               <p className="text-sm md:text-base">Someone's Name</p>
             </div>
-            <div className="border-2 border-gray p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
+            <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mt-0 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Next Opener</h1>
               <p className="text-sm md:text-base">Someone Else's Name</p>
             </div>
           </div>
         
           {/* Info sub component wrapper */}
-          <div className="flex flex-col md:flex-row mt-6">
-            <div className="border-2 border-gray p-2 md:w-1/2 md:mx-2">
+          <div className="flex flex-col md:flex-row md:mt-6">
+            <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
               <ActiveGifts/>
             </div>
-            <div className="border-2 border-gray p-2 mt-6 md:w-1/2 md:mt-0 md:mx-2">
+            <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mt-0 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Frozen Gifts</h1>
               <FrozenGifts/>
             </div>
