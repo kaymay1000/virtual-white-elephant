@@ -2,7 +2,7 @@ import Select from '../components/Select';
 import ActiveGifts from '../components/ActiveGifts';
 import FrozenGifts from '../components/FrozenGifts';
 import { useNavigate, useLocation } from 'react-router-dom';
-import React, { useState, useRef, createRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
 const ExchangePage = (): JSX.Element => {
   
@@ -23,6 +23,7 @@ const ExchangePage = (): JSX.Element => {
   const handleAdd = () => {
     const newGiftsArray = [...gifts, newGiftInput];
     setGifts(newGiftsArray);
+    setUnopenedGiftsRemaining(unopenedGiftsRemaining - 1);
   }
 
   return (
@@ -64,6 +65,7 @@ const ExchangePage = (): JSX.Element => {
                     <button 
                       className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base"
                       onClick={handleAdd}
+                      disabled={newGiftInput === '' ? true : false}
                     >
                       Add
                     </button>
@@ -131,9 +133,11 @@ const ExchangePage = (): JSX.Element => {
         </div>
 
         <div className="flex justify-center md:justify-end mt-6">
-          <button 
-            className="border-2 border-black px-2 mx-2 rounded hover:bg-green-400 text-sm md:text-base" 
+          <button
+            className={"border-2 border-black px-2 mx-2 rounded hover:bg-green-400 text-sm md:text-base"}
             onClick={() => navigate('/results')}
+            // TODO: think through if this is really needed/wanted
+            // disabled={unopenedGiftsRemaining === 0 ? false : true}
           >
             Complete Exchange
           </button>
