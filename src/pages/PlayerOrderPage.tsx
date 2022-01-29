@@ -68,7 +68,7 @@ const PlayerOrderPage = (): JSX.Element => {
        <div>
         <h1 className="text-2xl font-bold">It's go time!</h1>
         <p>Players will open gifts in the order shown below.</p>
-        <p className="pb-4 md:pb-8">There's no need to memorize your number. We'll let you know when it's your turn.</p>
+        <p className="pb-4 md:pb-6">There's no need to memorize your number. We'll let you know when it's your turn.</p>
       </div>
       <div className="max-w-full flex flex-col h-80 px-6 pb-6 pt-4 overflow-auto border-2 border-gray">
         <h1 className="text-lg md:text-2xl">Player Order</h1>
