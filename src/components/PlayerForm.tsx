@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from 'react-router-dom';
 interface PlayerFormValues {
+  // players: Array<{ name: string, currentGift: {giftName: string} }>
   players: Array<{ name: string }>
 }
 
@@ -36,6 +37,7 @@ const PlayerForm = (): JSX.Element => {
   
   const navigate = useNavigate();
   const initialValues: PlayerFormValues = {
+    // players: [{name: '', currentGift: {giftName: ''}}]
     players: [{name: ''}]
   }
   
@@ -122,6 +124,7 @@ const PlayerForm = (): JSX.Element => {
                     )}
                     <button 
                       type="button" 
+                      // onClick={() => {arrayHelpers.push({name: '', currentGift: {giftName: ''}});}}
                       onClick={() => {arrayHelpers.push({name: ''});}}
                       className="border-2 border-black px-2 rounded hover:bg-green-400"
                     >

@@ -11,13 +11,17 @@ const ExchangePage = (): JSX.Element => {
   const playerFormData = location.state;
   const numPlayers = playerFormData.length;
   const [players, setPlayers] = useState(playerFormData);
-  const [gifts, setGifts] = useState<Array<{ name: string }>>([]);
+  const [gifts, setGifts] = useState<Array<{ name: string, currentOwner: string }>>([]);
+  const [giftsForSelect, setGiftsForSelect] = useState<Array<string>>([]);
   // const [hasGifts, setHasGifts] = useState(false);
   const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
   // const [disableAddButton, setDisableAddButton] = useState(true);
   const [currentPlayerSelectValue, setCurrentPlayerSelectValue] = useState('');
   const [currentGiftSelectValue, setCurrentGiftSelectValue] = useState('');
+  const [currentOwner, setCurrentOwner] = useState([]);
+  const [currentOwners, setCurrentOwners] = useState([]);
+  const [currentForActiveGifts, setCurrentForActiveGifts] = useState([{name: '', currentOwner: ''}]);
 
   const handleInputUpdate = (event: React.FormEvent<HTMLInputElement>) => {
     let typedTarget = event.target as HTMLInputElement;
@@ -37,12 +41,19 @@ const ExchangePage = (): JSX.Element => {
     //   setUnopenedGiftsRemaining(unopenedGiftsRemaining - 1);
     //   // setHasGifts(true);
     // }
-    
-    const newGiftsArray = [...gifts, {name: newGiftInput}];
+
+    const giftsForSelectArray = [...giftsForSelect, newGiftInput];
+    setGiftsForSelect(giftsForSelectArray);
+
+    const newGiftsArray = [...gifts, {name: newGiftInput, currentOwner: 'No Owner'}];
     setGifts(newGiftsArray);
+
+    setCurrentForActiveGifts(newGiftsArray);
     setUnopenedGiftsRemaining(unopenedGiftsRemaining - 1);
     // setHasGifts(true);
   }
+
+
 
   // TODO: ditto from handleAdd
   // const disableAdd = () => {
@@ -79,10 +90,28 @@ const ExchangePage = (): JSX.Element => {
   //   return disableAddButton;
   // }
 
-  const handleUpdateGift = () => {
-    let playerToUpdate = players.filter((player: {name: string}) => player.name === currentPlayerSelectValue);
+  const handleUpdateGift = (
+    // what needs to happen when a gift is updated:
+    
+
+
+
+
+
+    // currentPlayersInActiveGifts: Array<{name: string, currentGift?: string}>, 
+    // currentGiftsInActiveGifts: Array<{name: string, currentOwner?: string}>,
+    currentGiftsInActiveGifts: Array<{name: string, currentOwner?: string}>,
+    playerToUpdateInActiveGifts: string,
+    giftToUpdateInActiveGifts: string,
+  ) => {
+    console.log('hitting here');
+    console.log('currentGiftsInActiveGifts from Exchange pg (data from child): ', currentGiftsInActiveGifts);
+    console.log('playerToUpdateInActiveGifts from Exchange pg (data from child): ', playerToUpdateInActiveGifts);
+    console.log('giftToUpdateInActiveGifts from Exchange pg (data from child): ', giftToUpdateInActiveGifts);
+    // let playerToUpdate = players.filter((player: {name: string}) => player.name === currentPlayerSelectValue);
     // since filter returns an array, have to access the player object at playerToUpdate[0]
-    playerToUpdate[0].currentGift = currentGiftSelectValue;
+    // playerToUpdate[0].currentGift = currentGiftSelectValue;
+
   }
 
   const handlePlayerChange = (currentPlayerSelectValue: string) => {
@@ -147,18 +176,18 @@ const ExchangePage = (): JSX.Element => {
                 <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
-                    <Select valueArray={players} label='Player' value={currentPlayerSelectValue} onValueChange={handlePlayerChange}/>
+                    <Select objectArray={players} label='Player' value={currentPlayerSelectValue} onValueChange={handlePlayerChange}/>
                   </div>
                   <div className="mx-auto md:mx-2">
                     {/* will eventually be active gifts instead of SelectValues */}
-                    <Select valueArray={gifts} label='Gift' value={currentGiftSelectValue} onValueChange={handleGiftChange}/>
+                    <Select stringArray={giftsForSelect} label='Gift' value={currentGiftSelectValue} onValueChange={handleGiftChange}/>
                     {/* TODO: think through how to prevent gift select from being clicked if no gifts have been added yet */}
                     {/* <Select giftArray={gifts} label='Gift' hasGifts={hasGifts}/> */}
                   </div>
                   <div className="flex flex-col justify-end mx-2">
                     <button 
                       className="border-2 border-black px-2 my-2 text-sm rounded hover:bg-green-400 md:text-base"
-                      onClick={handleUpdateGift}
+                      onClick={() => handleUpdateGift}
                     >
                       Update
                     </button>
@@ -198,7 +227,9 @@ const ExchangePage = (): JSX.Element => {
           <div className="flex flex-col md:flex-row md:mt-6">
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
-              <ActiveGifts gifts={gifts} players={players} giftToUpdateWith={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/>
+              <ActiveGifts allGifts={giftsForSelect} currentGifts={gifts} players={players} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue} handleUpdateGift={handleUpdateGift}/>
+              {/* <ActiveGifts gifts={gifts} players={players} handleUpdateGift={() => handleUpdateGift} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/> */}
+              {/* <ActiveGifts gifts={gifts} players={players} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/> */}
             </div>
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mt-0 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Frozen Gifts</h1>
