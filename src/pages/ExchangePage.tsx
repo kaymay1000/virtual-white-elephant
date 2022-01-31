@@ -12,49 +12,47 @@ const ExchangePage = (): JSX.Element => {
   const numPlayers = playerFormData.length;
   const [players, setPlayers] = useState(playerFormData);
   const [gifts, setGifts] = useState<Array<{ name: string, currentOwner: string }>>([]);
-  const [giftsForSelect, setGiftsForSelect] = useState<Array<string>>([]);
   const [newGiftInput, setNewGiftInput] = useState('');
   const [unopenedGiftsRemaining, setUnopenedGiftsRemaining] = useState(numPlayers);
   const [currentPlayerSelectValue, setCurrentPlayerSelectValue] = useState('');
   const [currentGiftSelectValue, setCurrentGiftSelectValue] = useState('');
-  const [currentForActiveGifts, setCurrentForActiveGifts] = useState([{name: '', currentOwner: ''}]);
 
-  const handleInputUpdate = (event: React.FormEvent<HTMLInputElement>) => {
+  // Add New Gift functionality
+  const handleNewGiftInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     let typedTarget = event.target as HTMLInputElement;
     setNewGiftInput(typedTarget.value);
   }
 
   const handleAddGift = () => {
-    const giftsForSelectArray = [...giftsForSelect, newGiftInput];
-    setGiftsForSelect(giftsForSelectArray);
-
+    // add new gift blob to existing gifts array
     const newGiftsArray = [...gifts, {name: newGiftInput, currentOwner: 'No Owner'}];
+    // set new gifts array into state
     setGifts(newGiftsArray);
-
-    setCurrentForActiveGifts(newGiftsArray);
+    // decrement unopened gifts remaining
     setUnopenedGiftsRemaining(unopenedGiftsRemaining - 1);
   }
 
-  const handleUpdateGift = (
-    currentGiftsInActiveGifts?: Array<{name: string, currentOwner?: string}>,
-  ) => {
-    console.log('currentGiftsInActiveGifts from Exchange pg (data from child): ', currentGiftsInActiveGifts);
-    if(currentGiftsInActiveGifts) {
-      let giftToUpdate = currentGiftsInActiveGifts.filter((gift: {name: string}) => gift.name === currentGiftSelectValue)[0];
-      console.log('gift to update in exchange page: ', giftToUpdate);
-      if(giftToUpdate) {
-        giftToUpdate.currentOwner = currentPlayerSelectValue;
-      }
-      console.log('gift to update in exchange page after update owner: ', giftToUpdate)
-    }
-  }
-
+  // Update Gift functionality
   const handlePlayerChange = (currentPlayerSelectValue: string) => {
     setCurrentPlayerSelectValue(currentPlayerSelectValue);
   }
 
   const handleGiftChange = (currentGiftSelectValue: string) => {
     setCurrentGiftSelectValue(currentGiftSelectValue);
+  }
+
+  const handleUpdateGift = (
+    currentGiftsInActiveGifts: Array<{name: string, currentOwner?: string}>,
+  ) => {
+    console.log('current gifts data from child): ', currentGiftsInActiveGifts);
+    // look for currently selected gift in current gifts array from Active Gifts
+    let giftToUpdate = currentGiftsInActiveGifts.filter((gift: {name: string}) => gift.name === currentGiftSelectValue)[0];
+    console.log('gift to update in exchange page: ', giftToUpdate);
+    // if the gift exists, update its currentOwner to the currently selected player
+    if (giftToUpdate) {
+      giftToUpdate.currentOwner = currentPlayerSelectValue;
+    }
+    console.log('gift to update in exchange page after update owner: ', giftToUpdate)
   }
 
   return (
@@ -84,7 +82,7 @@ const ExchangePage = (): JSX.Element => {
                       type="text" 
                       name="new gift name" 
                       value={newGiftInput}
-                      onChange={handleInputUpdate}
+                      onChange={handleNewGiftInputChange}
                       className="border-2 border-black px-1 my-2 w-36 md:w-44"/>
                   </div>
                   <div className="flex flex-col justify-end mx-2">
@@ -104,10 +102,10 @@ const ExchangePage = (): JSX.Element => {
                 <h1 className="font-bold text-sm md:text-base">Update Gift Owner</h1>
                 <div className="flex flex-col mx-auto xl:flex-row xl:justify-between">
                   <div className="mx-auto md:mx-2">
-                    <Select objectArray={players} label='Player' value={currentPlayerSelectValue} onValueChange={handlePlayerChange}/>
+                    <Select options={players} label='Player' currentValue={currentPlayerSelectValue} onValueChange={handlePlayerChange}/>
                   </div>
                   <div className="mx-auto md:mx-2">
-                    <Select stringArray={giftsForSelect} label='Gift' value={currentGiftSelectValue} onValueChange={handleGiftChange}/>
+                    <Select options={gifts} label='Gift' currentValue={currentGiftSelectValue} onValueChange={handleGiftChange}/>
                   </div>
                   <div className="flex flex-col justify-end mx-2">
                     <button 
