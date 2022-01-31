@@ -6,11 +6,9 @@ import { faChevronDown, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 type SelectProps = {
   objectArray?: Array<{name: string}>;
   stringArray?: Array<string>;
-  // TODO: figure out how to properly type these
   value: any;
   onValueChange?: any;
   label: string;
-  // hasGifts?: boolean;
 }
 
 const Select = ({
@@ -18,8 +16,7 @@ const Select = ({
   stringArray,
   label,
   value,
-  onValueChange,
-  // hasGifts
+  onValueChange
 }: SelectProps): JSX.Element => {
 
   const handleChange = (newValue: string) => {
@@ -35,9 +32,7 @@ const Select = ({
         <Listbox.Label className="text-sm md:text-base">{label}</Listbox.Label>
           <div className="flex justify-between items-center border-2 border-black px-2 my-2 w-36 md:w-44">
             <p className="text-sm md:text-base">{value}</p>
-            <Listbox.Button 
-              // disabled={!hasGifts}
-            >
+            <Listbox.Button>
               <Icon iconName={faChevronDown}></Icon>
             </Listbox.Button>
           </div>
