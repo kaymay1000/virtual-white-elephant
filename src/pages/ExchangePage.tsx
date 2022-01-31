@@ -92,7 +92,7 @@ const ExchangePage = (): JSX.Element => {
 
   const handleUpdateGift = (
     // what needs to happen when a gift is updated:
-    
+
 
 
 
@@ -227,6 +227,7 @@ const ExchangePage = (): JSX.Element => {
           <div className="flex flex-col md:flex-row md:mt-6">
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
+              {/* TODO: try unabstracting this first? */}
               <ActiveGifts allGifts={giftsForSelect} currentGifts={gifts} players={players} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue} handleUpdateGift={handleUpdateGift}/>
               {/* <ActiveGifts gifts={gifts} players={players} handleUpdateGift={() => handleUpdateGift} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/> */}
               {/* <ActiveGifts gifts={gifts} players={players} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/> */}
