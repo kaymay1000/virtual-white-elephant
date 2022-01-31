@@ -92,22 +92,20 @@ const ExchangePage = (): JSX.Element => {
 
   const handleUpdateGift = (
     // what needs to happen when a gift is updated:
-
-
-
-
-
-
-    // currentPlayersInActiveGifts: Array<{name: string, currentGift?: string}>, 
-    // currentGiftsInActiveGifts: Array<{name: string, currentOwner?: string}>,
-    currentGiftsInActiveGifts: Array<{name: string, currentOwner?: string}>,
-    playerToUpdateInActiveGifts: string,
-    giftToUpdateInActiveGifts: string,
+    currentGiftsInActiveGifts?: Array<{name: string, currentOwner?: string}>,
+    // playerToUpdateInActiveGifts: string,
+    // giftToUpdateInActiveGifts: string,
   ) => {
-    console.log('hitting here');
     console.log('currentGiftsInActiveGifts from Exchange pg (data from child): ', currentGiftsInActiveGifts);
-    console.log('playerToUpdateInActiveGifts from Exchange pg (data from child): ', playerToUpdateInActiveGifts);
-    console.log('giftToUpdateInActiveGifts from Exchange pg (data from child): ', giftToUpdateInActiveGifts);
+    if(currentGiftsInActiveGifts) {
+      let giftToUpdate = currentGiftsInActiveGifts.filter((gift: {name: string}) => gift.name === currentGiftSelectValue)[0];
+      console.log('gift to update in exchange page: ', giftToUpdate);
+      if(giftToUpdate) {
+        giftToUpdate.currentOwner = currentPlayerSelectValue;
+      }
+      console.log('gift to update in exchange page after update owner: ', giftToUpdate)
+    }
+    
     // let playerToUpdate = players.filter((player: {name: string}) => player.name === currentPlayerSelectValue);
     // since filter returns an array, have to access the player object at playerToUpdate[0]
     // playerToUpdate[0].currentGift = currentGiftSelectValue;
@@ -228,7 +226,8 @@ const ExchangePage = (): JSX.Element => {
             <div className="border-2 border-gray p-2 mt-2 md:mt-0 md:w-1/2 md:mx-2">
               <h1 className="font-bold text-sm md:text-base">Active Gifts</h1>
               {/* TODO: try unabstracting this first? */}
-              <ActiveGifts allGifts={giftsForSelect} currentGifts={gifts} players={players} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue} handleUpdateGift={handleUpdateGift}/>
+              {/* <ActiveGifts allGifts={giftsForSelect} currentGifts={gifts} players={players} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue} handleUpdateGift={handleUpdateGift}/> */}
+              <ActiveGifts currentGifts={gifts} onUpdateGift={handleUpdateGift}/>
               {/* <ActiveGifts gifts={gifts} players={players} handleUpdateGift={() => handleUpdateGift} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/> */}
               {/* <ActiveGifts gifts={gifts} players={players} giftToUpdate={currentGiftSelectValue} playerToUpdate={currentPlayerSelectValue}/> */}
             </div>
