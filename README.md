@@ -14,8 +14,8 @@ This is what sparked the idea for VWE. I wanted to come up with a way for friend
 
 ### Stack
 
-- React (w/ TypeScript)
-- Yarn
+- React w/ TypeScript (version 17.0.2)
+- Yarn (version 1.22.11)
 - Eventually MERN (see planned features below)
 
 ### Current Features
@@ -38,10 +38,10 @@ This is what sparked the idea for VWE. I wanted to come up with a way for friend
 
 ### Running the project
 
-- This is a create-react-app project that currently does not have a backend, so booting it up is quite simple.
-- After cloning this repo, run `yarn install` in your terminal to install all necessary dependencies.
+- This is a [create-react-app](https://create-react-app.dev/) project, so booting it up is quite simple.
+- After cloning this repo, run `yarn install` in your terminal to install all necessary dependencies. If you don't have Yarn installed, get it [here](https://classic.yarnpkg.com/en/docs/install#mac-stable).
 - Run `yarn start` to boot the app.
-- Visit `localhost:3000/` in your browser and get started!
+- Visit `localhost:3000/` in your browser to get started!
 
 ## Gameplay
 
