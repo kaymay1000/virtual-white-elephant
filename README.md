@@ -23,6 +23,7 @@ This is what sparked the idea for VWE. I wanted to come up with a way for friend
 - Cohesively styled, fully responsive web app (using Tailwind and HeadlessUI).
 - Ability to add player names.
 - Maintains fairness by randomly assigning the order in which players will open a gift.
+- Keeps track of how many unopened gifts remain.
 - Ability to update a gift's current owner (please note: this feature still needs some logic improvements).
 
 ### Planned Features
