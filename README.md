@@ -5,24 +5,28 @@
 Don't get stuck with those ugly socks (nobody wants your re-gift, Karen!), or that mystery-flavored jam that's at _least_ a decade old... let Virtual White Elephant handle the logistics of hosting a virtual gift exchange, so all you have to do is kick back, relax, and watch your foolproof gift-swapping strategy unfold.
 
 ## Why I created Virtual White Elephant (VWE)
+
 This project was born out of the C\*vid-19 pandemic. Something I love to do around the holidays, as do many folks, is participate in a gift exchange with friends or family. Enter: C19. Fear, frustration, plans derailed left and right... including holiday celebrations and traditions. 
 
-This is what sparked the idea for VWE. I wanted to come up with a way for friends/families to manage the logisitcs of a gift exchange over Zoom, with the hope that it would help restore a tiny bit of normalcy to an utterly abnormal chapter of human history.
+This is what sparked the idea for VWE. I wanted to come up with a way for friends/families to manage the logistics of a gift exchange held over Zoom, with the hope that it would help restore a tiny bit of normalcy to an utterly abnormal chapter of human history.
 
 ## For Developers
 
-## Stack
+### Stack
+
 - React (w/ TypeScript)
 - Yarn
 - Eventually MERN (see planned features below)
 
-## Current Features
-- Styled, fully responsive web app (using Tailwind and HeadlessUI).
+### Current Features
+
+- Cohesively styled, fully responsive web app (using Tailwind and HeadlessUI).
 - Ability to add player names.
-- Maintains fairness by randomly assigning the order in which players will open a gift
+- Maintains fairness by randomly assigning the order in which players will open a gift.
 - Ability to update a gift's current owner (please note: this feature still needs some logic improvements).
 
-## Planned Features
+### Planned Features
+
 - Ensure accessibility/A11Y compliance.
 - Make game details session persistent.
 - Keep track of (and display to the user) how many times a gift has been stolen (max of 3 times, then it's "frozen").
@@ -31,7 +35,8 @@ This is what sparked the idea for VWE. I wanted to come up with a way for friend
 - Eventually want to stand up some sort of simple backend for storing game data.
 - Potentially refactor/rewrite this project in React Native or Swift with the hope of publishing it to an app store or two.
 
-## Running the project
+### Running the project
+
 - This is a create-react-app project that currently does not have a backend, so booting it up is quite simple.
 - After cloning this repo, run `yarn install` in your terminal to install all necessary dependencies.
 - Run `yarn start` to boot the app.
@@ -47,3 +52,7 @@ This is what sparked the idea for VWE. I wanted to come up with a way for friend
 - If your gift is stolen, you may either choose a new gift to open or steal another gift.
 - A gift can only be stolen twice after its initial opening-- after two steals, the gift becomes "frozen" and remains with its third/final owner.
 - Gameplay continues sequentially until each player has gotten a chance to either open a new gift, or steal an existing one.
+
+VWE was designed and written by me, Kaylee Alvarado.
+
+Documentation last updated Feb 2022.
