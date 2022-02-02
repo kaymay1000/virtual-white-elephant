@@ -9,26 +9,41 @@ This project was born out of the C\*vid-19 pandemic. Something I love to do arou
 
 This is what sparked the idea for VWE. I wanted to come up with a way for friends/families to manage the logisitcs of a gift exchange over Zoom, with the hope that it would help restore a tiny bit of normalcy to an utterly abnormal chapter of human history.
 
+## For Developers
+
+## Stack
+- React (w/ TypeScript)
+- Yarn
+- Eventually MERN (see planned features below)
+
 ## Current Features
-- Fully responsive web app.
+- Styled, fully responsive web app (using Tailwind and HeadlessUI).
 - Ability to add player names.
 - Maintains fairness by randomly assigning the order in which players will open a gift
 - Ability to update a gift's current owner (please note: this feature still needs some logic improvements).
 
 ## Planned Features
 - Ensure accessibility/A11Y compliance.
-- Keep track of (and display to the user) how many times a gift has been stolen (max of 3 times, then it's frozen).
+- Make game details session persistent.
+- Keep track of (and display to the user) how many times a gift has been stolen (max of 3 times, then it's "frozen").
 - Implement Redux to (hopefully) reduce excessive amounts of lifted state and prop drilling, particularly for the Exchange page and all of its child components.
 - Ability to email a formatted list of the exchange results to whoever would like a copy.
+- Eventually want to stand up some sort of simple backend for storing game data.
 - Potentially refactor/rewrite this project in React Native or Swift with the hope of publishing it to an app store or two.
+
+## Running the project
+- This is a create-react-app project that currently does not have a backend, so booting it up is quite simple.
+- After cloning this repo, run `yarn install` in your terminal to install all necessary dependencies.
+- Run `yarn start` to boot the app.
+- Visit `localhost:3000/` in your browser and get started!
 
 ## Gameplay
 
-- Designate one participant to be the Host
-- Each Participant places their gift in view of their webcam
-- Each Participant "draws" a number at random
-- Participant #1 chooses which gift they'd like to "open", and has the Participant who brought that gift unveil it on camera for all to see
-- Participant #2 has two options: choose another gift to open, or steal Participant #1's gift
-- If your gift is stolen, you may either choose a new gift to open or steal another gift
-- A gift can only be stolen twice after its initial opening-- after two steals, the gift "dies" and remains with its third/final owner
-- Gameplay continues sequentially until each Participant has gotten a chance to either open a new gift, or steal an existing one
+- Designate one player to be the Host.
+- Each player places their gift in view of their webcam.
+- Each player "draws" a number at random.
+- Player #1 chooses which gift they'd like to "open", and has the player who brought that gift unveil it on camera for all to see.
+- Player #2 has two options: choose another gift to open, or steal player #1's gift.
+- If your gift is stolen, you may either choose a new gift to open or steal another gift.
+- A gift can only be stolen twice after its initial opening-- after two steals, the gift becomes "frozen" and remains with its third/final owner.
+- Gameplay continues sequentially until each player has gotten a chance to either open a new gift, or steal an existing one.
