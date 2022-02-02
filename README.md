@@ -1,4 +1,4 @@
-# Virtual White Elephant
+# Virtual White Elephant🐘
 
 ## Please note: This project is currently in progress!
 
