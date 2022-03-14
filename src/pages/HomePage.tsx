@@ -6,12 +6,17 @@ const HomePage = (): JSX.Element => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto">
+    <div className="w-full md:w-3/5 mx-auto max-h-screen overflow-auto bg-purple-100 p-12 rounded-xl">
       <h1 className="text-2xl font-bold">Virtual White Elephant</h1>
-      <div className="my-4">
-        <Emoji className="text-2xl" label='wrapped gift emoji' symbol='🎁'/>
+      <div>
+        <img 
+          className="object-cover h-12 w-12 mx-auto" 
+          aria-label="Virtual White Elephant gift with gift tag logo" 
+          src="../assets/gift_with_tag.png"
+        />
       </div>
       
+   
       <div className="pb-4">
         <p>
           Don't get stuck with those ugly socks (nobody wants your re-gift, Karen!), or that mystery-flavored jam 
