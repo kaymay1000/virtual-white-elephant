@@ -35,12 +35,18 @@ const Nav = ({
       
       <header>
         <nav>
-          <div className="w-full h-16 p-2 bg-green-100 text-center">
+          <div className="w-full h-16 p-2 bg-indigo-100 text-center">
             <div className="flex justify-between">
-              {isMobile ? 
+              {/* {isMobile ? 
                 <button className="text-2xl py-2 px-4" onClick={() => navigate('/')}>VWE <Emoji label='elephant emoji' symbol='🐘'/></button>
                : 
                 <button className="text-2xl py-2 px-4" onClick={() => navigate('/')}>Virtual White Elephant <Emoji label='elephant emoji' symbol='🐘'/></button>
+              } */}
+
+              {isMobile ? 
+                <button className="text-2xl py-2 px-4" onClick={() => navigate('/')}>VWE</button>
+               : 
+                <button className="text-2xl py-2 px-4" onClick={() => navigate('/')}>Virtual White Elephant</button>
               }
 
               {isMobile ? (
